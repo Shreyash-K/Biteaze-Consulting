@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BITEAZE | F&B Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preload" href="https://rhxxzvhemrzxvndolajg.supabase.co/storage/v1/object/public/biteaze-assets/logo.png" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-accent: #ea580c; /* Burnt Orange */
+        --color-bg: #09090b; /* Zinc 950 */
+        --color-text: #fafaf9; /* Stone 50 */
+      }
+      html {
+        scroll-padding-top: 80px; /* Offset for fixed navbar */
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Archivo Black', sans-serif;
+      }
+      .font-mono {
+        font-family: 'Space Mono', monospace;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #18181b; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ea580c; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c2410c; 
+      }
+
+      /* Neo-Brutalist Utilities */
+      .neo-border {
+        border: 2px solid #27272a;
+      }
+      .neo-card {
+        background-color: #18181b;
+        border: 1px solid #3f3f46;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      .neo-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 6px 6px 0px var(--color-accent);
+        border-color: var(--color-accent);
+      }
+
+      /* Grid Pattern Background */
+      .bg-grid-pattern {
+        background-size: 50px 50px;
+        background-image: linear-gradient(to right, rgba(39, 39, 42, 0.5) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(39, 39, 42, 0.5) 1px, transparent 1px);
+      }
+      
+      .text-outline {
+        -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+        color: transparent;
+      }
+
+      /* Glitch Effect Helper */
+      @keyframes glitch {
+        0% { transform: translate(0) }
+        20% { transform: translate(-2px, 2px) }
+        40% { transform: translate(-2px, -2px) }
+        60% { transform: translate(2px, 2px) }
+        80% { transform: translate(2px, -2px) }
+        100% { transform: translate(0) }
+      }
+      .animate-glitch:hover {
+        animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+        color: var(--color-accent);
+      }
+
+      /* Fade In Up Animation */
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        opacity: 0;
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      /* Active Step Pulse Animation */
+      @keyframes subtle-pulse {
+        0%, 100% { 
+          transform: scale(1); 
+          box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4);
+        }
+        50% { 
+          transform: scale(1.1); 
+          box-shadow: 0 0 20px 5px rgba(234, 88, 12, 0.6);
+        }
+      }
+      .animate-subtle-pulse {
+        animation: subtle-pulse 2s infinite ease-in-out;
+      }
+
+      /* Selection styling */
+      ::selection {
+        background-color: #ea580c;
+        color: white;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
