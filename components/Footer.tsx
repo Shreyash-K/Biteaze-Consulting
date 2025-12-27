@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect, useRef } from 'react';
-import { ChefHat, Instagram, Linkedin, Twitter, Mail, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '../utils/supabaseClient';
 
 export const Footer: React.FC = () => {
@@ -126,7 +127,6 @@ export const Footer: React.FC = () => {
                     onChange={handleChange}
                     type="text" 
                     className="w-full bg-zinc-900 border-b-2 border-zinc-800 focus:border-orange-500 text-white p-2 outline-none transition-colors" 
-                    placeholder="John Doe" 
                   />
                 </div>
                 <div>
@@ -138,7 +138,6 @@ export const Footer: React.FC = () => {
                     onChange={handleChange}
                     type="text" 
                     className="w-full bg-zinc-900 border-b-2 border-zinc-800 focus:border-orange-500 text-white p-2 outline-none transition-colors" 
-                    placeholder="Tasty Co." 
                   />
                 </div>
               </div>
@@ -152,7 +151,6 @@ export const Footer: React.FC = () => {
                     onChange={handleChange}
                     type="email" 
                     className="w-full bg-zinc-900 border-b-2 border-zinc-800 focus:border-orange-500 text-white p-2 outline-none transition-colors" 
-                    placeholder="john@example.com" 
                   />
                 </div>
                 <div>
@@ -164,8 +162,7 @@ export const Footer: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       type="tel"
-                      className="w-full bg-transparent text-white p-2 outline-none placeholder-zinc-700"
-                      placeholder="9876543210"
+                      className="w-full bg-transparent text-white p-2 outline-none"
                     />
                   </div>
                 </div>
@@ -220,12 +217,10 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t-2 border-zinc-950 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
            <div className="flex items-center gap-2">
-            {/* Logo removed here */}
             <span className="font-['Archivo_Black'] text-xl text-zinc-950">BITEAZE © 2025</span>
           </div>
           
           <div className="flex gap-6">
-            {/* Social icons converted to static divs for visual presence only */}
             <div className="w-10 h-10 border-2 border-zinc-950 flex items-center justify-center text-zinc-950">
               <Instagram size={20} />
             </div>
