@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[60vh] md:min-h-[85vh] flex flex-col justify-center items-center overflow-hidden bg-zinc-950 pt-[80px] md:pt-[100px]"
+      className="relative min-h-[75vh] md:min-h-[90vh] flex flex-col justify-center items-center overflow-hidden bg-zinc-950 pt-[100px] md:pt-[120px]"
     >
       {/* BACKGROUND ELEMENTS */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -56,10 +56,10 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 w-full flex flex-col items-center text-center pb-8 md:pb-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center pb-24 md:pb-32">
         
         {/* Floating Status Badge */}
-        <div className="mb-4 sm:mb-8 flex items-center gap-3 border border-zinc-700 bg-zinc-900/80 backdrop-blur-xl px-5 py-2 rounded-full animate-fade-in-up shadow-2xl">
+        <div className="mb-6 sm:mb-10 flex items-center gap-3 border border-zinc-700 bg-zinc-900/80 backdrop-blur-xl px-5 py-2 rounded-full animate-fade-in-up shadow-2xl">
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
@@ -70,8 +70,8 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Hero Headline */}
-        <div className="mb-4 md:mb-8 animate-fade-in-up w-full select-none">
-          <h1 className="font-archivo text-[12vw] md:text-[9vw] lg:text-[10vw] tracking-tighter leading-[0.8] text-white">
+        <div className="mb-6 md:mb-10 animate-fade-in-up w-full select-none">
+          <h1 className="font-archivo text-[10vw] md:text-[8vw] lg:text-[8.5vw] tracking-tight leading-[0.85] text-white">
             <span className="block mb-1 md:mb-2">TRANSFORMING</span>
             <span className="block">
               <span className="text-orange-500">FLAVORS</span>
@@ -85,20 +85,20 @@ export const Hero: React.FC = () => {
 
         {/* Subtitle */}
         <div className="max-w-3xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <p className="text-zinc-400 font-mono text-[10px] sm:text-base md:text-lg mb-4 md:mb-8 leading-relaxed px-4">
+          <p className="text-zinc-400 font-mono text-[11px] sm:text-base md:text-lg mb-6 md:mb-10 leading-relaxed px-4">
             WE ARE THE ARCHITECTS OF TASTE AND THE ENGINEERS OF PROFIT. 
             <span className="hidden sm:inline"> INTEGRATING NEUTRAL DESIGN WITH RADICAL OPERATIONAL OPTIMIZATION.</span>
           </p>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-40 cursor-pointer hidden md:block" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-bounce opacity-40 cursor-pointer hidden md:block" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
           <ChevronDown size={28} className="text-orange-500" />
         </div>
       </div>
 
       {/* SCROLLING MARQUEE */}
-      <div className="absolute bottom-0 w-full py-4 bg-white/5 border-y border-zinc-900 backdrop-blur-sm overflow-hidden z-20">
+      <div className="absolute bottom-0 w-full py-5 bg-zinc-950/80 border-y border-zinc-800 backdrop-blur-md overflow-hidden z-20">
         <div className="flex whitespace-nowrap animate-scroll-marquee">
           {[...Array(15)].map((_, i) => (
             <div key={i} className="flex items-center px-8">
