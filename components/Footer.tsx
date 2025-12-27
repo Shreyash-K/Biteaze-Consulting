@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Instagram, Linkedin, Twitter, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '../utils/supabaseClient';
 
 export const Footer: React.FC = () => {
@@ -220,18 +220,6 @@ export const Footer: React.FC = () => {
             <span className="font-['Archivo_Black'] text-xl text-zinc-950">BITEAZE © 2025</span>
           </div>
           
-          <div className="flex gap-6">
-            <div className="w-10 h-10 border-2 border-zinc-950 flex items-center justify-center text-zinc-950">
-              <Instagram size={20} />
-            </div>
-            <div className="w-10 h-10 border-2 border-zinc-950 flex items-center justify-center text-zinc-950">
-              <Linkedin size={20} />
-            </div>
-            <div className="w-10 h-10 border-2 border-zinc-950 flex items-center justify-center text-zinc-950">
-              <Twitter size={20} />
-            </div>
-          </div>
-
           <div className="flex gap-4 font-mono text-xs font-bold text-zinc-950 uppercase">
             <a href="#" className="hover:underline">Privacy Policy</a>
             <a href="#" className="hover:underline">Terms of Service</a>
