@@ -1,58 +1,34 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export const Hero: React.FC = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-      const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-      const x = (e.clientX - left) / width - 0.5;
-      const y = (e.clientY - top) / height - 0.5;
-      setMousePos({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const parallaxStyle = {
-    transform: `translate3d(${mousePos.x * 30}px, ${mousePos.y * 30}px, 0)`,
-    transition: 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)'
-  };
-
-  const slowParallaxStyle = {
-    transform: `translate3d(${mousePos.x * -15}px, ${mousePos.y * -15}px, 0)`,
-    transition: 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)'
-  };
-
   return (
     <section 
-      ref={containerRef}
       className="relative min-h-[75vh] md:min-h-[90vh] flex flex-col justify-center items-center overflow-hidden bg-zinc-950 pt-[100px] md:pt-[120px]"
     >
-      {/* BACKGROUND ELEMENTS */}
+      {/* BACKGROUND ELEMENTS (AUTO-ANIMATED) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Moving Grid - Continuous Flow 
+            Expanded container to cover rotation edges and increased opacity for visibility 
+        */}
         <div 
-          className="absolute inset-0 bg-grid-pattern opacity-10"
+          className="absolute -inset-[100%] bg-grid-pattern opacity-[0.2] animate-grid-flow origin-center will-change-transform"
           style={{ 
-            ...slowParallaxStyle,
-            perspective: '1000px',
-            transform: `${slowParallaxStyle.transform} rotateX(15deg) scale(1.15)`
+            transform: 'perspective(1000px) rotateX(60deg) scale(2)',
+            backgroundSize: '80px 80px'
           }}
         ></div>
 
-        <div 
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-orange-600/10 blur-[150px] rounded-full animate-pulse"
-          style={parallaxStyle}
-        ></div>
-        <div 
-          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-red-600/5 blur-[120px] rounded-full animate-pulse"
-          style={slowParallaxStyle}
-        ></div>
+        {/* Ambient Blobs - Independent Floating 
+            Increased opacity and size for distinct visibility
+        */}
+        <div className="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] bg-orange-600/30 blur-[100px] rounded-full mix-blend-screen animate-blob opacity-80"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-red-600/20 blur-[80px] rounded-full mix-blend-screen animate-blob animation-delay-2000 opacity-80"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-orange-500/10 blur-[120px] rounded-full animate-pulse-slow"></div>
+        
+        {/* Vignette & Grain Overlay for Texture and Depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(9,9,11,0.95)_80%)]"></div>
       </div>
 
       {/* MAIN CONTENT */}
@@ -69,23 +45,27 @@ export const Hero: React.FC = () => {
           </span>
         </div>
 
-        {/* Hero Headline with Staggered Reveals */}
+        {/* Hero Headline with Staggered Reveals & Glitch */}
         <div className="mb-8 md:mb-12 w-full select-none">
           <h1 className="font-archivo text-[10vw] md:text-[8vw] lg:text-[8.5vw] tracking-tight leading-[0.85] text-white">
             <div className="overflow-hidden">
-              <span className="block animate-reveal-up" style={{ animationDelay: '0.1s' }}>
+              <span className="block animate-reveal-up" style={{ animationDelay: '0.2s' }}>
                 TRANSFORMING
               </span>
             </div>
+            
             <div className="overflow-hidden">
-              <span className="block animate-reveal-up" style={{ animationDelay: '0.3s' }}>
-                <span className="text-orange-500">FLAVORS</span>
+              <span className="block animate-reveal-up" style={{ animationDelay: '0.5s' }}>
+                <span className="text-orange-500 inline-block hover:scale-105 transition-transform duration-500">FLAVORS</span>
                 <span className="ml-2 md:ml-4 opacity-50 text-outline text-[6vw]">INTO</span>
               </span>
             </div>
-            <div className="overflow-hidden">
-              <span className="block italic text-orange-600 animate-reveal-up" style={{ animationDelay: '0.5s' }}>
-                EMPIRES
+            
+            <div className="overflow-hidden mt-2 relative perspective-text">
+              <span className="block italic text-orange-600 animate-reveal-up" style={{ animationDelay: '0.8s' }}>
+                 <span className="relative inline-block glitch-container" data-text="EMPIRES">
+                    EMPIRES
+                 </span>
               </span>
             </div>
           </h1>
@@ -93,7 +73,7 @@ export const Hero: React.FC = () => {
 
         {/* Subtitle */}
         <div className="max-w-3xl overflow-hidden">
-          <p className="text-zinc-400 font-mono text-[11px] sm:text-base md:text-lg mb-8 md:mb-12 leading-relaxed px-4 animate-reveal-up" style={{ animationDelay: '0.7s' }}>
+          <p className="text-zinc-400 font-mono text-[11px] sm:text-base md:text-lg mb-8 md:mb-12 leading-relaxed px-4 animate-reveal-up" style={{ animationDelay: '1.2s' }}>
             WE ARE THE ARCHITECTS OF TASTE AND THE ENGINEERS OF PROFIT. 
             <span className="hidden sm:inline"> INTEGRATING NEUTRAL DESIGN WITH RADICAL OPERATIONAL OPTIMIZATION.</span>
           </p>
@@ -124,46 +104,124 @@ export const Hero: React.FC = () => {
       </div>
       
       <style>{`
-        @keyframes scroll-marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+        /* --- Grid Flow Animation --- */
+        @keyframes grid-flow {
+          0% { background-position: 0 0; }
+          100% { background-position: 0 80px; } /* Matches backgroundSize y-value */
         }
+        .animate-grid-flow {
+          animation: grid-flow 3s linear infinite;
+        }
+
+        /* --- Blob Floating Animation --- */
+        @keyframes blob-float {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(60px, -100px) scale(1.15); }
+          66% { transform: translate(-50px, 50px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+          animation: blob-float 12s infinite ease-in-out;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+
+        /* --- Slow Pulse --- */
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+          50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 8s infinite ease-in-out;
+        }
+
+        /* --- Glitch Effect for 'EMPIRES' --- */
+        .glitch-container {
+            position: relative;
+        }
+        .glitch-container::before,
+        .glitch-container::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        .glitch-container::before {
+            color: #fff;
+            z-index: -1;
+            clip-path: inset(0 0 0 0);
+            animation: glitch-anim-1 4s infinite linear alternate-reverse;
+        }
+        .glitch-container::after {
+            color: #ea580c; /* accent color */
+            z-index: -2;
+            clip-path: inset(0 0 0 0);
+            animation: glitch-anim-2 4s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim-1 {
+          0% { clip-path: inset(80% 0 0 0); transform: translate(-2px, 2px); }
+          5% { clip-path: inset(10% 0 85% 0); transform: translate(2px, -2px); }
+          10% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 0); }
+          15% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 2px); }
+          20%, 100% { clip-path: inset(100% 0 0 0); transform: translate(0, 0); }
+        }
+        @keyframes glitch-anim-2 {
+          0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -2px); }
+          5% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 2px); }
+          10% { clip-path: inset(30% 0 20% 0); transform: translate(2px, 0); }
+          15% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, -2px); }
+          20%, 100% { clip-path: inset(100% 0 0 0); transform: translate(0, 0); }
+        }
+
+        /* --- Standard Reveals (Slowed Down) --- */
         @keyframes reveal-up {
           0% { transform: translateY(110%); }
           100% { transform: translateY(0); }
         }
+        .animate-reveal-up {
+          animation: reveal-up 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
         @keyframes hero-fade-in {
           0% { opacity: 0; transform: translateY(10px); }
           100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-hero-fade-in {
+          animation: hero-fade-in 1.5s ease-out forwards;
         }
         @keyframes scale-in {
           0% { transform: scale(0.95); opacity: 0; }
           100% { transform: scale(1); opacity: 1; }
         }
+        .scale-in {
+          animation: scale-in 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* --- Marquee --- */
+        @keyframes scroll-marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll-marquee {
+          animation: scroll-marquee 50s linear infinite;
+        }
+
+        /* --- Utility --- */
+        .text-outline {
+          -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+          color: transparent;
+        }
         @keyframes bounce-slow {
           0%, 100% { transform: translate(-50%, 0); }
           50% { transform: translate(-50%, 10px); }
         }
-        
-        .animate-scroll-marquee {
-          animation: scroll-marquee 50s linear infinite;
-        }
-        .animate-reveal-up {
-          animation: reveal-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-        .animate-hero-fade-in {
-          animation: hero-fade-in 1s ease-out forwards;
-        }
         .animate-bounce-slow {
           animation: bounce-slow 3s ease-in-out infinite;
-        }
-        .scale-in {
-          animation: scale-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        .text-outline {
-          -webkit-text-stroke: 1px rgba(255,255,255,0.2);
-          color: transparent;
         }
       `}</style>
     </section>
