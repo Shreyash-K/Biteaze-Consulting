@@ -14,9 +14,9 @@ export const Portfolio: React.FC = () => {
   const [items, setItems] = useState<PortfolioItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   
+  // Fetch Data
   useEffect(() => {
     const fetchPortfolio = async () => {
       setIsLoading(true);
@@ -51,38 +51,57 @@ export const Portfolio: React.FC = () => {
     fetchPortfolio();
   }, []);
 
+  // Handle Mobile Scroll Animation via Intersection Observer
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
+    // Only run this logic on mobile devices
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    
+    if (!isMobile || items.length === 0) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-45% 0px -45% 0px', // Trigger when element is in the middle 10% of screen
+      threshold: 0.05
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          const index = Number(entry.target.getAttribute('data-index'));
+          if (!isNaN(index)) {
+            setActiveIndex(index);
+          }
         }
-      },
-      { threshold: 0.1 }
-    );
+      });
+    }, observerOptions);
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [items]);
+
+  // Interaction handlers for Desktop (Hover)
+  const handleMouseEnter = (index: number) => {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      setActiveIndex(index);
     }
+  };
 
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible || items.length === 0) return;
-    setActiveIndex(0);
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % items.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [isVisible, items.length]);
+  const handleMouseLeave = () => {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      setActiveIndex(-1);
+    }
+  };
 
   const activeColor = activeIndex !== -1 && items[activeIndex] ? items[activeIndex].color : 'bg-zinc-950';
 
   return (
     <section 
       id="portfolio" 
-      ref={sectionRef}
       className={`py-24 px-4 transition-colors duration-1000 ease-in-out ${activeColor} relative border-t border-zinc-800 min-h-[600px] overflow-hidden`}
     >
       <div className="max-w-7xl mx-auto relative z-10">
@@ -94,7 +113,8 @@ export const Portfolio: React.FC = () => {
           </div>
           <div className="text-left md:text-right mt-6 md:mt-0">
             <p className="font-mono text-white/50 text-xs uppercase tracking-widest leading-loose">
-              Current Showcase: <br/> Module {activeIndex + 1} of {items.length}
+              Current Showcase: <br/> 
+              {activeIndex !== -1 ? `Module ${activeIndex + 1}` : 'Select a Project'} of {items.length}
             </p>
           </div>
         </div>
@@ -107,9 +127,13 @@ export const Portfolio: React.FC = () => {
               return (
                 <div 
                   key={item.id}
-                  className={`relative py-14 transition-all duration-700 ease-in-out border-b ${isActive ? 'border-white border-b-2' : 'border-white/10'}`}
+                  ref={(el) => { itemRefs.current[index] = el; }}
+                  data-index={index}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                  className={`relative py-14 transition-all duration-700 ease-in-out border-b cursor-default ${isActive ? 'border-white border-b-2' : 'border-white/10'}`}
                 >
-                  <div className="flex flex-col md:flex-row items-center justify-center z-10 relative w-full">
+                  <div className="flex flex-col md:flex-row items-center justify-center z-10 relative w-full pointer-events-none">
                     <div className={`md:absolute md:left-0 mb-4 md:mb-0 transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-40'}`}>
                         <span className="font-mono text-xs text-white uppercase tracking-widest">
                             {index + 1 < 10 ? `0${index + 1}` : index + 1} {item.category ? `— ${item.category}` : ''}
