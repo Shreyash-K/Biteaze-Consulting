@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { TrendingUp, IndianRupee, Calculator } from 'lucide-react';
 
@@ -26,10 +27,19 @@ export const RoiCalculator: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-zinc-800 pt-12">
                 {/* Controls (Col 5) */}
                 <div className="lg:col-span-5 flex flex-col justify-center">
+                    
+                    {/* Description - Moved to Top */}
+                    <div className="mb-8 border-l-2 border-zinc-800 pl-6 py-2">
+                        <p className="font-mono text-zinc-400 text-sm leading-relaxed">
+                        By optimizing supply chains, reducing kitchen waste and aligning correct menu pricing, our "Food Costing & P&L Management" modules typically recovers upto <span className="text-white bg-orange-600/20 px-1 border-b border-orange-600/50">18% of lost revenue</span> within the first 90 days.
+                        </p>
+                    </div>
+
+                    {/* Calculator Input - Moved to Bottom */}
                     <div className="bg-zinc-900 border border-zinc-800 p-8 relative group hover:border-zinc-700 transition-colors">
                         <div className="flex justify-between items-center mb-6">
                             <label className="font-mono text-xs text-zinc-500 uppercase tracking-widest block">
-                                Input: Monthly Spend
+                                Input: Spend
                             </label>
                             <Calculator size={16} className="text-zinc-600" />
                         </div>
@@ -53,12 +63,6 @@ export const RoiCalculator: React.FC = () => {
                             <span>₹25k</span>
                             <span>₹5L</span>
                         </div>
-                    </div>
-                    
-                    <div className="mt-8 border-l-2 border-zinc-800 pl-6 py-2">
-                            <p className="font-mono text-zinc-400 text-sm leading-relaxed">
-                            By optimizing supply chains, reducing kitchen waste and aligning correct menu pricing, our "Food Costing & P&L Management" modules typically recovers upto <span className="text-white bg-orange-600/20 px-1 border-b border-orange-600/50">18% of lost revenue</span> within the first 90 days.
-                            </p>
                     </div>
                 </div>
 
@@ -97,8 +101,8 @@ export const RoiCalculator: React.FC = () => {
                     <div className="bg-zinc-900/30 border border-zinc-800 p-6 flex items-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
                             <div className="w-0.5 h-12 bg-zinc-800"></div>
                             <div>
-                            <span className="block font-mono text-xs text-zinc-600 uppercase mb-1">5-Year Runway Impact</span>
-                            <span className="font-archivo text-xl text-zinc-300">Total Capital Reclaimed: <span className="text-white border-b border-zinc-700">₹{fiveYear.toLocaleString('en-IN')}</span></span>
+                                <span className="block font-mono text-xs text-zinc-600 uppercase mb-1">5-Year Runway Impact</span>
+                                <span className="font-archivo text-xl text-zinc-300">Total Capital Reclaimed: <span className="text-white border-b border-zinc-700">₹{fiveYear.toLocaleString('en-IN')}</span></span>
                             </div>
                     </div>
                 </div>

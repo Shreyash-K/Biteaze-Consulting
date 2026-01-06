@@ -30,41 +30,60 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 export const ServicesBento: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
-  const sectionRef = useRef<HTMLElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const totalItems = services.length + 2;
 
+  // Handle Mobile Scroll Animation via Intersection Observer
   useEffect(() => {
-    let loopTimer: number;
+    // Only run this logic on mobile devices (e.g., width < 768px)
+    // We check this inside the effect, but also we can check matchMedia to be more robust
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    
+    if (!isMobile) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          const startLoop = () => {
-            loopTimer = window.setInterval(() => {
-              setActiveIndex((prev) => (prev + 1) % totalItems);
-            }, 2000);
-          };
-          startLoop();
-          observer.disconnect();
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -30% 0px', // Trigger when element is in the middle 40% of screen
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Find the index of the intersecting element based on the dataset attribute
+          const index = Number(entry.target.getAttribute('data-index'));
+          if (!isNaN(index)) {
+            setActiveIndex(index);
+          }
         }
-      },
-      { threshold: 0.1 }
-    );
+      });
+    }, observerOptions);
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
 
     return () => {
       observer.disconnect();
-      if (loopTimer) clearInterval(loopTimer);
     };
   }, [totalItems]);
+
+  // Interaction handlers for Desktop (Hover)
+  const handleMouseEnter = (index: number) => {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      setActiveIndex(index);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      setActiveIndex(-1);
+    }
+  };
 
   return (
     <section 
       id="services" 
-      ref={sectionRef}
       className="py-24 bg-zinc-950 relative border-t border-zinc-800 overflow-hidden"
     >
       
@@ -88,11 +107,18 @@ export const ServicesBento: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-rows-auto gap-4">
           
-          {/* MAIN CARD: COMPLETE BRAND DEVELOPMENT */}
+          {/* MAIN CARD: COMPLETE BRAND DEVELOPMENT (Index 0) */}
           {(() => {
-            const isActive = activeIndex === 0;
+            const index = 0;
+            const isActive = activeIndex === index;
             return (
-              <div className={`col-span-1 md:col-span-2 row-span-2 bg-zinc-950 border-2 border-zinc-800 relative group overflow-hidden flex flex-col justify-between transition-all duration-500 ${isActive ? 'border-white z-20' : ''}`}>
+              <div 
+                ref={(el) => { cardRefs.current[index] = el; }}
+                data-index={index}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                className={`col-span-1 md:col-span-2 row-span-2 bg-zinc-950 border-2 border-zinc-800 relative group overflow-hidden flex flex-col justify-between transition-all duration-500 ${isActive ? 'border-white z-20' : ''}`}
+              >
                 
                 {/* White Fill Transition */}
                 <div className={`absolute inset-0 bg-white transition-transform duration-700 cubic-bezier(0.85, 0, 0.15, 1) z-0 ${isActive ? 'translate-y-0' : 'translate-y-full'}`}></div>
@@ -138,14 +164,19 @@ export const ServicesBento: React.FC = () => {
             );
           })()}
 
-          {/* STANDARD SERVICE CARDS */}
+          {/* STANDARD SERVICE CARDS (Indices 1 to services.length) */}
           {services.map((service, idx) => {
+             const index = idx + 1; // Offset by 1 because of main card
              const stationColor = CATEGORY_COLORS[service.category];
-             const isActive = idx + 1 === activeIndex;
+             const isActive = activeIndex === index;
              
              return (
                 <div 
                     key={service.id} 
+                    ref={(el) => { cardRefs.current[index] = el; }}
+                    data-index={index}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
                     className={`neo-card bg-zinc-900 border border-zinc-800 p-5 flex flex-col justify-between relative overflow-hidden transition-all duration-300 ${isActive ? 'translate-y-[-4px] border-zinc-500 z-10 shadow-lg' : ''}`}
                 >
                     <div className={`absolute inset-0 bg-white transition-transform duration-500 ease-in-out z-0 ${isActive ? 'translate-y-0' : 'translate-y-full'}`}></div>
@@ -175,11 +206,18 @@ export const ServicesBento: React.FC = () => {
              );
           })}
 
-          {/* PROFIT CARD: P&L MANAGEMENT */}
+          {/* PROFIT CARD: P&L MANAGEMENT (Last Index) */}
           {(() => {
-            const isActive = activeIndex === totalItems - 1;
+            const index = totalItems - 1;
+            const isActive = activeIndex === index;
             return (
-              <div className={`col-span-1 md:col-span-2 bg-zinc-900 border border-zinc-800 p-0 relative overflow-hidden flex flex-col transition-all duration-300 ${isActive ? 'translate-y-[-4px] border-zinc-500 z-10 shadow-lg' : ''}`}>
+              <div 
+                ref={(el) => { cardRefs.current[index] = el; }}
+                data-index={index}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                className={`col-span-1 md:col-span-2 bg-zinc-900 border border-zinc-800 p-0 relative overflow-hidden flex flex-col transition-all duration-300 ${isActive ? 'translate-y-[-4px] border-zinc-500 z-10 shadow-lg' : ''}`}
+              >
                  <div className={`absolute inset-0 bg-white transition-transform duration-500 ease-in-out z-0 ${isActive ? 'translate-y-0' : 'translate-y-full'}`}></div>
 
                  <div className="p-6 relative z-10 flex flex-col h-full justify-between">
