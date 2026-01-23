@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ServicesBento } from './components/ServicesBento';
@@ -47,7 +47,7 @@ const HomePage = () => {
          </p>
          
          <Link 
-           to="/consulting&management" 
+           to="/consulting-management" 
            className="group relative inline-flex items-center justify-center bg-transparent border-2 border-zinc-800 text-white font-archivo uppercase text-lg md:text-xl px-10 py-5 overflow-hidden transition-all duration-300 hover:border-orange-600 hover:shadow-[0_0_30px_rgba(234,88,12,0.3)]"
          >
            <span className="relative z-10 flex items-center gap-3">
@@ -68,12 +68,15 @@ const HomePage = () => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        {/* Updated clean URL path */}
+        <Route path="/consulting-management" element={<ConsultingPage />} />
+        {/* Fallback for legacy URL with ampersand */}
         <Route path="/consulting&management" element={<ConsultingPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
