@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChefHat } from 'lucide-react';
 
@@ -20,7 +21,6 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Expertise', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
-    { name: 'ROI', href: '#roi' },
     { name: 'Team', href: '#team' },
   ];
 
