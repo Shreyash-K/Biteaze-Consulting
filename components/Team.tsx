@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Crosshair, Terminal, Zap } from 'lucide-react';
 import { supabase } from '../utils/supabaseClient';
@@ -58,13 +59,21 @@ const fallbackTeamMembers: Operator[] = [
     code: 'OP_CULINARY',
     skills: ['New Recipe Dev', 'Manpower Training', 'Kitchen Development', 'Vendor Development']
   },
+  { 
+    id: '06', 
+    name: 'Vikram', 
+    role: 'Real Estate Lead', 
+    exp: '6+ YRS EXP',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop', 
+    code: 'OP_ESTATE',
+    skills: ['Concept & Site Strategy', 'Leasing & Tenant Mix', 'Landlord-Operator Sync', 'Real Estate Growth']
+  },
 ];
 
 export const Team: React.FC = () => {
   const [teamMembers, setTeamMembers] = useState<Operator[]>(fallbackTeamMembers);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const fetchTeam = async () => {
@@ -96,36 +105,50 @@ export const Team: React.FC = () => {
     fetchTeam();
   }, []);
 
+  // Mobile Scroll Animation
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.15 }
-    );
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (!isMobile || teamMembers.length === 0) return;
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = Number(entry.target.getAttribute('data-index'));
+          if (!isNaN(index)) {
+            setActiveIndex(index);
+          }
+        }
+      });
+    }, observerOptions);
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
 
     return () => observer.disconnect();
-  }, []);
+  }, [teamMembers]);
 
-  useEffect(() => {
-    if (!isVisible || teamMembers.length === 0) return;
+  // Desktop Hover Handlers
+  const handleMouseEnter = (index: number) => {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      setActiveIndex(index);
+    }
+  };
 
-    setActiveIndex(0);
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % teamMembers.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isVisible, teamMembers.length]);
+  const handleMouseLeave = () => {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      setActiveIndex(-1);
+    }
+  };
 
   return (
-    <section id="team" ref={sectionRef} className="py-32 px-4 bg-zinc-950 border-t border-zinc-800 relative overflow-hidden">
+    <section id="team" className="py-32 px-4 bg-zinc-950 border-t border-zinc-800 relative overflow-hidden">
       {/* Background Decorative Tech */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600/5 blur-3xl rounded-full pointer-events-none"></div>
       
@@ -157,7 +180,11 @@ export const Team: React.FC = () => {
                 
                 return (
                     <div 
-                        key={member.id} 
+                        key={member.id}
+                        ref={(el) => { itemRefs.current[index] = el; }}
+                        data-index={index}
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onMouseLeave={handleMouseLeave}
                         className={`group relative bg-zinc-900 border transition-all duration-500 flex flex-col overflow-hidden ${isActive ? 'border-orange-600 scale-[1.03] z-10 shadow-[0_0_30px_rgba(234,88,12,0.2)]' : 'border-zinc-800'}`}
                     >
                         {/* Header Bar */}

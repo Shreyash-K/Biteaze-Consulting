@@ -217,7 +217,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t-2 border-zinc-950 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
            <div className="flex items-center gap-2">
-            <span className="font-['Archivo_Black'] text-xl text-zinc-950">BITEAZE © 2025</span>
+            <span className="font-['Archivo_Black'] text-xl text-zinc-950">BITEAZE © 2026</span>
           </div>
           
           <div className="flex gap-4 font-mono text-xs font-bold text-zinc-950 uppercase">
