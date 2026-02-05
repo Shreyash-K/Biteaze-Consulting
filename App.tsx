@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -42,8 +41,7 @@ const HomePage = () => {
          <div className="h-1 w-24 bg-orange-600 mb-10"></div>
          
          <p className="font-mono text-zinc-400 text-sm md:text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-           /// SYSTEM STATUS: ONLINE <br/>
-           SELECT MODULE TO PROCEED
+           Our main website is under development. Meanwhile check out our Consulting & Management Service Below
          </p>
          
          <Link 
@@ -56,11 +54,6 @@ const HomePage = () => {
            </span>
            <div className="absolute inset-0 bg-zinc-900 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
          </Link>
-
-         <div className="mt-16 flex gap-8">
-            <span className="text-zinc-700 font-mono text-xs uppercase">Dev: Active</span>
-            <span className="text-zinc-700 font-mono text-xs uppercase">Design: Brutalist</span>
-         </div>
        </div>
     </div>
   );
