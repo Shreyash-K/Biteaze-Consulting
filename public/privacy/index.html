@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Biteaze Billing | Biteaze Solutions LLP</title>
+<meta name="description" content="Privacy Policy for the Biteaze Billing Android app, published by Biteaze Solutions LLP. How we collect, use, store, share, retain and delete personal data, in compliance with India's DPDP Act 2023, the DPDP Rules 2025 and the IT Act / SPDI Rules 2011.">
+<style>
+  :root{
+    --orange:#f97316;
+    --orange-dark:#c2540a;
+    --orange-tint:#fff4ec;
+    --ink:#1f2430;
+    --ink-soft:#3b4250;
+    --muted:#5c6575;
+    --line:#e6e8ee;
+    --line-strong:#d3d7e0;
+    --bg:#ffffff;
+    --bg-soft:#f7f8fb;
+    --bg-card:#ffffff;
+    --shadow:0 1px 2px rgba(17,24,39,.04),0 8px 24px rgba(17,24,39,.06);
+    --radius:14px;
+    --radius-sm:10px;
+    --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:var(--font);
+    color:var(--ink);
+    background:var(--bg-soft);
+    line-height:1.65;
+    font-size:16.5px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 80px;}
+  header.masthead{
+    background:linear-gradient(135deg,#fff 0%,var(--orange-tint) 100%);
+    border-bottom:1px solid var(--line);
+    padding:38px 0 30px;
+  }
+  header.masthead .wrap{padding-bottom:0;}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;font-size:1.15rem;color:var(--ink);}
+  .brand .dot{
+    width:30px;height:30px;border-radius:8px;background:var(--orange);
+    display:inline-flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:1rem;box-shadow:0 4px 10px rgba(249,115,22,.35);
+  }
+  h1{font-size:2rem;line-height:1.2;margin:18px 0 6px;letter-spacing:-.02em;font-weight:800;color:var(--ink);}
+  .sub{color:var(--muted);font-size:1rem;margin:0;}
+  .meta-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .pill{background:#fff;border:1px solid var(--line-strong);border-radius:999px;padding:5px 12px;font-size:.82rem;color:var(--ink-soft);font-weight:600;}
+  .pill b{color:var(--orange-dark);}
+  main{background:var(--bg);margin-top:24px;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+  .main-pad{padding:30px 34px;}
+  .summary{border:1px solid var(--line-strong);border-left:4px solid var(--orange);background:var(--orange-tint);border-radius:var(--radius-sm);padding:20px 22px;margin:0 0 28px;}
+  .summary h2{margin:0 0 10px;font-size:1.1rem;border:none;padding:0;}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .summary li{margin:6px 0;}
+  .summary .nutshell{font-size:.95rem;color:var(--ink-soft);margin:0 0 4px;}
+  nav.toc{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 22px;margin:0 0 30px;}
+  nav.toc h2{font-size:1rem;margin:0 0 10px;border:none;padding:0;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+  nav.toc ol{margin:0;padding-left:22px;columns:2;column-gap:28px;}
+  nav.toc li{margin:4px 0;break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;}
+  nav.toc a:hover{color:var(--orange-dark);text-decoration:underline;}
+  h2{font-size:1.32rem;margin:38px 0 14px;letter-spacing:-.01em;font-weight:800;color:var(--ink);border-top:1px solid var(--line);padding-top:26px;}
+  h2:first-of-type{border-top:none;padding-top:0;}
+  h2 .num{color:var(--orange);font-variant-numeric:tabular-nums;}
+  h3{font-size:1.08rem;margin:22px 0 8px;font-weight:700;color:var(--ink);}
+  h4{font-size:.98rem;margin:16px 0 6px;font-weight:700;color:var(--ink-soft);}
+  p{margin:10px 0;color:var(--ink-soft);}
+  a{color:var(--orange-dark);}
+  ul,ol{color:var(--ink-soft);}
+  li{margin:6px 0;}
+  strong{color:var(--ink);}
+  .lead{font-size:1.02rem;color:var(--ink-soft);}
+  .table-scroll{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:var(--radius-sm);}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:560px;}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:var(--bg-soft);font-weight:700;color:var(--ink);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;}
+  tr:last-child td{border-bottom:none;}
+  td code{font-size:.85em;}
+  .note{background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:14px 18px;margin:16px 0;font-size:.94rem;}
+  .note.warn{border-left:4px solid var(--orange);background:var(--orange-tint);}
+  .note .label{display:block;font-weight:800;color:var(--orange-dark);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+  code{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;color:var(--ink);}
+  .contact-card{border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:18px 20px;background:#fff;margin:16px 0;}
+  .contact-card h4{margin-top:0;color:var(--orange-dark);}
+  .contact-card .row{margin:4px 0;font-size:.95rem;}
+  .contact-card .row span{display:inline-block;min-width:130px;color:var(--muted);font-weight:600;}
+  .do-list li::marker{color:var(--orange);}
+  hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0;}
+  footer.foot{text-align:center;color:var(--muted);font-size:.85rem;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);}
+  .backtop{font-size:.8rem;}
+  @media (max-width:680px){
+    body{font-size:16px;}
+    h1{font-size:1.6rem;}
+    h2{font-size:1.18rem;}
+    .main-pad{padding:22px 18px;}
+    nav.toc ol{columns:1;}
+    header.masthead{padding:28px 0 22px;}
+    .contact-card .row span{min-width:0;display:block;margin-bottom:1px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="brand"><span class="dot">B</span> Biteaze</span>
+    <h1>Privacy Policy</h1>
+    <p class="sub">For the <strong>Biteaze Billing</strong> Android application, published by <strong>Biteaze Solutions LLP</strong>.</p>
+    <div class="meta-pills">
+      <span class="pill">Effective date: <b>26 June 2026</b></span>
+      <span class="pill">Last updated: <b>26 June 2026</b></span>
+      <span class="pill">Applies to: <b>Android app</b></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+<div class="main-pad">
+
+  <!-- PLAIN-LANGUAGE SUMMARY -->
+  <section class="summary" aria-label="Plain-language summary">
+    <h2>In plain language (the short version)</h2>
+    <p class="nutshell">This summary is for quick understanding only. The full policy below is the legally binding version.</p>
+    <ul>
+      <li><strong>What the app is.</strong> Biteaze Billing is an offline-first point-of-sale and billing app for small businesses in India. You run your shop with it — sales, stock, expenses, customer credit (<em>udhaar</em>), staff and reports.</li>
+      <li><strong>Your data lives on your device first.</strong> Everything works offline. If you sign in and have an active plan with cloud backup, a copy is securely synced to your private, owner-only space on Google Firebase.</li>
+      <li><strong>Voice billing sends text, not audio.</strong> Your phone's own Google speech feature turns your speech into text. Only that <em>text</em> (plus your item list) is sent to our server, and on to Google's Gemini AI, to understand the order. We never upload your raw microphone audio. The mic is used <strong>only</strong> while you actively use voice billing — never in the background.</li>
+      <li><strong>We do not sell your data.</strong> No advertising, no ad targeting, no data brokers. We share data only with Google (Firebase / Gemini) to make the app work, and where the law requires.</li>
+      <li><strong>We never ask for location, camera, contacts, photos, SMS or call logs.</strong></li>
+      <li><strong>Your data may be stored on Google servers outside India.</strong> Our cloud runs on Google Cloud / Firebase, and some Google data centres are located outside India. See <a href="#s13">Section 13</a>.</li>
+      <li><strong>One anti-fraud marker is kept even after you delete your account.</strong> To stop people farming free trials, we keep a one-way, non-reversible hash. It is the only thing retained for that purpose. See <a href="#s14">Section 14</a>.</li>
+      <li><strong>You're in control.</strong> You can delete your account and cloud data from inside the app, on our website, or by email. See <a href="#s14">Section 14</a>.</li>
+      <li><strong>Your customers' data.</strong> When you type your own customers' or staff details into the app, <em>you</em> are responsible for that data and we simply process it for you, under a contract. See <a href="#s06">Section 6</a>.</li>
+    </ul>
+  </section>
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#s01">Who we are &amp; how to contact us</a></li>
+      <li><a href="#s02">Scope of this policy</a></li>
+      <li><a href="#s03">Key terms</a></li>
+      <li><a href="#s04">What data we collect (full table)</a></li>
+      <li><a href="#s05">Where the data comes from</a></li>
+      <li><a href="#s06">Roles: who is responsible for what</a></li>
+      <li><a href="#s07">Why we use your data, legal bases &amp; consent</a></li>
+      <li><a href="#s08">How voice billing works (exactly)</a></li>
+      <li><a href="#s09">App permissions &amp; what we do NOT collect</a></li>
+      <li><a href="#s10">Local storage &amp; backup exclusion</a></li>
+      <li><a href="#s11">Cloud sync, isolation, lifecycle &amp; security</a></li>
+      <li><a href="#s12">Who we share data with (processors)</a></li>
+      <li><a href="#s13">International data transfers</a></li>
+      <li><a href="#s14">Data retention &amp; deletion</a></li>
+      <li><a href="#s15">Your rights &amp; how to use them</a></li>
+      <li><a href="#s16">Grievance Officer &amp; the Data Protection Board</a></li>
+      <li><a href="#s17">Children's data</a></li>
+      <li><a href="#s18">Security practices</a></li>
+      <li><a href="#s19">Diagnostics, analytics &amp; identifiers</a></li>
+      <li><a href="#s20">Changes to this policy</a></li>
+      <li><a href="#s21">Governing law</a></li>
+      <li><a href="#s22">Contact summary</a></li>
+    </ol>
+  </nav>
+
+  <p class="lead">Biteaze Solutions LLP ("<strong>Biteaze</strong>", "<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>") respects your privacy and is committed to protecting personal data. This Privacy Policy explains what personal data the <strong>Biteaze Billing</strong> Android app (Play Store application ID <code>com.aistudio.voicebillingpos.jyxqwt</code>) collects, how and why we use it, who we share it with, how long we keep it, how we protect it, and the rights and choices you have. It is published in compliance with India's <strong>Digital Personal Data Protection Act, 2023</strong> (the "DPDP Act"), the <strong>Digital Personal Data Protection Rules, 2025</strong> (the "DPDP Rules"), and the <strong>Information Technology Act, 2000</strong> (Section 43A) and the <strong>SPDI Rules, 2011</strong>. Together with the consent screens shown inside the app, this policy is also intended to serve as the notice required under <strong>Section 5 of the DPDP Act</strong> (see <a href="#s07">Section 7</a>).</p>
+
+  <!-- 1 -->
+  <h2 id="s01"><span class="num">1.</span> Who we are &amp; how to contact us</h2>
+  <p>The app is published, and your personal data is controlled, by:</p>
+  <div class="contact-card">
+    <h4>Biteaze Solutions LLP</h4>
+    <div class="row"><span>Entity type</span> Limited Liability Partnership, registered in India</div>
+    <div class="row"><span>Registered office</span> Ground Floor, Shop No-6, 8/2295, Satkar Building, Dhundhiyawadi, Palanpur, District Banaskantha, Gujarat 385001, India</div>
+    <div class="row"><span>Email</span> <a href="mailto:support@biteaze.com">support@biteaze.com</a></div>
+    <div class="row"><span>Privacy policy</span> <a href="https://biteaze.com/privacy">https://biteaze.com/privacy</a></div>
+    <div class="row"><span>Account deletion</span> <a href="https://biteaze.com/account-deletion">https://biteaze.com/account-deletion</a></div>
+  </div>
+  <p>For any privacy question, request or complaint, contact our Grievance Officer (see <a href="#s16">Section 16</a>) at <a href="mailto:support@biteaze.com">support@biteaze.com</a>.</p>
+
+  <!-- 2 -->
+  <h2 id="s02"><span class="num">2.</span> Scope of this policy</h2>
+  <p>This policy applies to the Biteaze Billing Android app, the cloud backend that supports it (built on Google Firebase / Google Cloud), and the related account-management and support services we provide.</p>
+  <p>Biteaze Billing is a <strong>business (B2B) tool</strong>. It is used by a business owner, manager or cashier (referred to in this policy as "<strong>you</strong>", the "<strong>user</strong>", or the "<strong>Data Principal</strong>") to run a shop or service business — typically a kirana/grocery store, a food &amp; beverage outlet, or a salon/services business. Through the app you enter data both about <em>your own business</em> and about <em>your customers and staff</em>. The way this policy treats each kind of data differs; see <a href="#s06">Section 6</a>.</p>
+  <p>The app is supported on Android 7.0 (API level 24) and above.</p>
+
+  <!-- 3 -->
+  <h2 id="s03"><span class="num">3.</span> Key terms</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Personal data</strong></td><td>Any data about an identifiable individual (e.g. a name, phone number, email). Data that can still be used to single out an individual — even in pseudonymised or hashed form — may be personal data.</td></tr>
+      <tr><td><strong>Data Principal</strong></td><td>The individual to whom personal data relates (under the DPDP Act). When you sign up, you are a Data Principal.</td></tr>
+      <tr><td><strong>Data Fiduciary</strong></td><td>The person who decides the purpose and means of processing personal data (the "controller"). See <a href="#s06">Section 6</a> for who is the Fiduciary in different situations.</td></tr>
+      <tr><td><strong>Data Processor</strong></td><td>A person who processes personal data on behalf of, and on the instructions of, a Data Fiduciary, under a valid contract.</td></tr>
+      <tr><td><strong>SPDI</strong></td><td>"Sensitive personal data or information" under the SPDI Rules, 2011 — includes passwords and financial information such as payment-instrument details.</td></tr>
+      <tr><td><strong>Processing</strong></td><td>Any operation performed on personal data — collecting, storing, using, sharing, erasing, etc.</td></tr>
+      <tr><td><strong>The Board</strong></td><td>The Data Protection Board of India, established under the DPDP Act.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- 4 -->
+  <h2 id="s04"><span class="num">4.</span> What data we collect</h2>
+  <p>We collect only what is needed to run the app and provide the service. The table below itemises every category, what it includes, and where it is stored. "On device" means it is stored locally in the app's encrypted database; "Cloud" means it is also synced to your private Firebase space when cloud backup is enabled (see Sections 10–11).</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Category</th><th>Examples of what is included</th><th>Stored</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Account &amp; authentication</strong></td>
+        <td>Your sign-in email address and password, or your Google account email if you use Google Sign-In; a user account identifier (<code>owner_uid</code>); phone number if you provide one for sign-in.</td>
+        <td>Cloud (Firebase Authentication)</td>
+      </tr>
+      <tr>
+        <td><strong>Subscription &amp; entitlement</strong></td>
+        <td>Your plan (30-day trial, 1-year, 5-year, or lifetime), trial/subscription status and dates, and a locally cached entitlement token.</td>
+        <td>On device + Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Catalog / inventory</strong> (your business data)</td>
+        <td>Product and service names, prices, SKUs, HSN tax codes, stock levels, categories, add-ons, variations, voice aliases, inventory ledger movements.</td>
+        <td>On device + Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Sales &amp; orders</strong> (your business data)</td>
+        <td>Order amounts (subtotal, tax, discount, total), payment method, order status, table/staff references, timestamps, and order line items.</td>
+        <td>On device + Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Expenses</strong> (your business data)</td>
+        <td>Expense title, amount, category, note and date.</td>
+        <td>On device + Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Your customers' data</strong> (entered by you)</td>
+        <td>Customer name, phone number, and outstanding credit balance (<em>udhaar</em>). The app does not collect a customer email or address field today.</td>
+        <td>On device + Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Your staff data</strong> (entered by you)</td>
+        <td>Staff name, role, and active/inactive flag.</td>
+        <td>On device + Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Voice billing text</strong></td>
+        <td>The <em>text transcript</em> of what you say while using the voice feature, plus your own product/service item list to help match items. The text you speak may include a person's name (for example, "add two milk for Ramesh"). We do not upload raw audio (see Section 8).</td>
+        <td>Transient (sent for processing; not stored by Biteaze)</td>
+      </tr>
+      <tr>
+        <td><strong>Business metadata</strong></td>
+        <td>Your business category and related settings.</td>
+        <td>On device + Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Diagnostics &amp; analytics</strong></td>
+        <td>App-usage/interaction events, crash stack traces and non-fatal errors, device model, OS version and app version (see Section 19).</td>
+        <td>Cloud (Firebase Analytics, Crashlytics)</td>
+      </tr>
+      <tr>
+        <td><strong>Device &amp; SDK identifiers</strong></td>
+        <td>Firebase Installation ID, Analytics app-instance ID, App Check tokens, the Android Advertising ID (collected by the Google Analytics for Firebase SDK), and the transient IP address inherent to delivering any network request (see Section 19).</td>
+        <td>Cloud (Google/Firebase)</td>
+      </tr>
+      <tr>
+        <td><strong>Anti-abuse identity hash</strong></td>
+        <td>A one-way <em>hash</em> derived from sign-up identity, kept in a trial-history ledger to prevent trial-farming. We cannot reverse it to recover your underlying identifiers; we treat it as personal data held in pseudonymised form (see Sections 14 and 19).</td>
+        <td>Cloud</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note warn">
+    <span class="label">Sensitive / financial information</span>
+    Because the app records payment methods and amounts and stores account passwords, some data is treated as "sensitive personal data or information" (SPDI) under the SPDI Rules, 2011, and is handled with the corresponding consent, use-limitation, transfer and security obligations described in this policy. Note: the app records the <em>method</em> of payment (e.g. cash, UPI, card) and amounts — it does not collect or store full card numbers or bank-account credentials.
+  </div>
+
+  <!-- 5 -->
+  <h2 id="s05"><span class="num">5.</span> Where the data comes from</h2>
+  <ul>
+    <li><strong>Directly from you</strong> — when you create an account, set up your business, add products, ring up sales, record expenses, or use voice billing.</li>
+    <li><strong>Generated by the app</strong> — timestamps, order IDs, your account identifier, and computed totals.</li>
+    <li><strong>Entered by you about other people</strong> — your customers' names/phone numbers/credit balances and your staff details. This is personal data about individuals other than you; see Section 6 for your responsibilities.</li>
+    <li><strong>Automatically, for diagnostics</strong> — usage events, crash/error reports, device characteristics and identifiers collected by the Google/Firebase SDKs bundled in the app (Section 19).</li>
+    <li><strong>From Google sign-in</strong> — if you choose Google Sign-In, we receive your basic Google account email to create/authenticate your account.</li>
+  </ul>
+
+  <!-- 6 -->
+  <h2 id="s06"><span class="num">6.</span> Roles: who is responsible for what</h2>
+  <p>Biteaze plays <strong>two different legal roles</strong> depending on the kind of data:</p>
+
+  <h3>6.1 Your own account &amp; business data — Biteaze is the Data Fiduciary</h3>
+  <p>For your sign-in details (email, password, phone), your subscription and billing data, your diagnostics, and the identifiers we collect to run the app, <strong>Biteaze Solutions LLP is the Data Fiduciary</strong> (controller). We decide the purpose and means of that processing and are accountable for it under the DPDP Act and the IT Act / SPDI Rules.</p>
+
+  <h3>6.2 Your customers' and staff data — you are the Data Fiduciary, we are your Data Processor</h3>
+  <p>When you enter personal data <em>about your own customers or staff</em> (names, phone numbers, credit balances, roles), <strong>you</strong> decide the purpose and means of that processing for your business. Under the DPDP Act, <strong>you are the Data Fiduciary</strong> for that data and <strong>Biteaze acts only as your Data Processor</strong>. As required by the DPDP Act, Biteaze processes this data only under a valid contract with you — your acceptance of our <a href="https://biteaze.com/terms">Terms of Service</a> forms that processing contract — and only to provide the app's features to you.</p>
+  <div class="note">
+    <span class="label">Your responsibilities (as Data Fiduciary for your customers/staff)</span>
+    <ul style="margin:6px 0 0;">
+      <li>You are responsible for having a valid lawful basis (such as notice and consent, where required) to collect and use your customers'/staff personal data, and for giving them any privacy notice the law requires.</li>
+      <li>You should only enter data you are entitled to enter, and keep it accurate.</li>
+      <li>You must not enter the personal data of a person under 18 without the consent the DPDP Act requires (see Section 17).</li>
+    </ul>
+  </div>
+  <div class="note">
+    <span class="label">Our commitments to you as your Processor</span>
+    <ul style="margin:6px 0 0;">
+      <li>We process your customers'/staff data only on your instructions and only to provide the service.</li>
+      <li>We assist you with security, with deletion when you delete your account, and with responding to rights requests that reach us about your customers — which we route to you as the responsible Fiduciary.</li>
+      <li>We return or delete this data on termination of your account, except for anything the law requires us to keep.</li>
+      <li>We do <strong>not</strong> use your customers' or staff data for our own purposes, and we do not sell or advertise against it.</li>
+    </ul>
+  </div>
+
+  <!-- 7 -->
+  <h2 id="s07"><span class="num">7.</span> Why we use your data, legal bases &amp; consent</h2>
+  <p>We process personal data only for the specific, itemised purposes in the table below. Under the DPDP Act our lawful basis is either:</p>
+  <ul>
+    <li><strong>Your consent</strong> — which you give through the in-app consent screens when you sign up, and again when you turn on optional features such as voice billing or cloud backup (DPDP s.6); or</li>
+    <li><strong>A "legitimate use" enumerated in Section 7 of the DPDP Act</strong> — limited to the specific situations that section permits, such as personal data you voluntarily provide for a specified purpose, and our compliance with a legal obligation.</li>
+  </ul>
+  <p>Unlike some other regimes, the DPDP Act does <strong>not</strong> have an open-ended "legitimate interest" basis. We therefore rely on your <strong>consent</strong> for service delivery, optional features, support and service improvement, and rely on a Section 7 legitimate use or a legal obligation only where that section actually applies.</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Purpose</th><th>Data used</th><th>Legal basis</th></tr></thead>
+    <tbody>
+      <tr><td>Create and authenticate your account</td><td>Email/phone, password or Google sign-in, account ID</td><td>Consent (s.6)</td></tr>
+      <tr><td>Provide core POS features (sales, inventory, expenses, customer credit, staff, reports)</td><td>Catalog, sales, expenses, customers, staff, business metadata</td><td>Consent (s.6); data you voluntarily provide for the requested service (s.7(a))</td></tr>
+      <tr><td>Voice billing (optional)</td><td>Voice-derived text + your item list</td><td>Consent — feature-triggered (s.6)</td></tr>
+      <tr><td>Cloud backup &amp; sync (optional)</td><td>Your on-device data mirrored to your private cloud space</td><td>Consent (s.6)</td></tr>
+      <tr><td>Receipt printing (optional)</td><td>Bluetooth connection to your paired printer; order data printed</td><td>Consent (s.6)</td></tr>
+      <tr><td>Subscription, trial &amp; billing management</td><td>Subscription/entitlement data, anti-abuse hash</td><td>Consent (s.6); for the anti-abuse hash, the basis described in Section 14.3</td></tr>
+      <tr><td>Customer support</td><td>Account and relevant account data you ask us to look into</td><td>Consent (s.6)</td></tr>
+      <tr><td>Security, integrity &amp; fraud/abuse prevention</td><td>App Check tokens, identifiers, anti-abuse hash, audit logs</td><td>Consent (s.6) and, where applicable, compliance with legal obligation (s.7)</td></tr>
+      <tr><td>Reliability, stability &amp; service improvement</td><td>Diagnostics, crash reports, aggregated analytics</td><td>Consent (s.6)</td></tr>
+      <tr><td>Legal &amp; tax compliance</td><td>Records the law requires us to keep</td><td>Legal obligation (s.7)</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>7.1 The consent flow &amp; how to withdraw</h3>
+  <p>At sign-up, and before you turn on each optional feature, the app shows a clear notice describing the personal data involved and the purpose, and asks for your consent for that itemised purpose. You can <strong>withdraw consent at any time</strong>, and withdrawal is as easy as giving it (DPDP s.6(4)–(6)):</p>
+  <ul>
+    <li><strong>Voice billing</strong> — simply stop using the feature; you can also decline the microphone permission.</li>
+    <li><strong>Cloud backup &amp; sync</strong> — turn off cloud backup, or delete your account to remove the cloud copy.</li>
+    <li><strong>Receipt printing / Bluetooth</strong> — disconnect or unpair your printer, or revoke the Bluetooth permission in Android settings.</li>
+    <li><strong>Diagnostics/analytics</strong> — these run as part of operating and improving the app and are not currently individually toggleable inside the app; if you wish to object, contact our Grievance Officer (Section 16). You can also limit ad-identifier use via your Android device's "Privacy → Ads" settings.</li>
+  </ul>
+  <p>Withdrawing consent stops the related processing going forward, but does not affect (a) the lawfulness of processing already carried out before withdrawal, (b) any processing carried out under a "legitimate use" (s.7) or a legal obligation, or (c) features that depend on the data you withdraw — those features may stop working. If you withdraw consent, we will, within a reasonable time, cease processing unless another lawful ground applies. The manner of withdrawing consent and of raising a grievance is set out in Section 7.1 and Section 16; the manner of complaining to the Board is set out in Section 16.</p>
+  <p>We compute <strong>aggregated</strong> analytics (for example total sales value, order counts, tax totals, payment-method split, top items and expenses) per account and across our user base, to operate, secure and improve the service. We do not use these analytics for advertising.</p>
+  <p><strong>Languages.</strong> On request, we will make this notice available in English and in any language specified in the Eighth Schedule to the Constitution of India, as contemplated by Section 5(3) of the DPDP Act. Write to <a href="mailto:support@biteaze.com">support@biteaze.com</a>.</p>
+
+  <!-- 8 -->
+  <h2 id="s08"><span class="num">8.</span> How voice billing works (exactly)</h2>
+  <p>Voice billing is <strong>optional</strong>. It lets you ring up sales by speaking (for example, "add two milk"). Here is precisely what happens, step by step:</p>
+  <ol>
+    <li><strong>You tap the microphone button.</strong> The microphone is only ever active in the foreground while you are using this feature. There is no background or continuous listening.</li>
+    <li><strong>Your phone's own Google speech feature converts your speech to text.</strong> The app uses Android's built-in <code>SpeechRecognizer</code>, which is a Google system component on your device. Depending on your device and Android version, Google's speech service may process the audio on your device or transmit it to Google's servers. This is Google's system component, governed by Google's terms — it is not something Biteaze operates or controls. Biteaze itself does not collect or store your raw audio.</li>
+    <li><strong>Only the resulting text is sent to us — never the raw audio.</strong> The text transcript, together with your own product/service item list (to help match what you said to your catalog), is sent over an encrypted HTTPS connection to a Biteaze Cloud Function. Because you are speaking a real order, this text may include a person's name (for example, a customer's first name).</li>
+    <li><strong>The Cloud Function asks Google's Gemini AI to understand the text.</strong> It sends the text to the Google Gemini API, which parses it into a structured billing command (for example, item + quantity) and returns the result to the app. The Gemini API key is held only on our server as a Cloud Functions secret — it is never on your device. This text is processed to return the parsed result and is not retained by Biteaze as a standing record.</li>
+  </ol>
+  <div class="note warn">
+    <span class="label">Important — no raw audio leaves us</span>
+    Biteaze does <strong>not</strong> upload your raw microphone audio to Biteaze's servers or to Gemini. We send only the transcribed text plus your item list. The conversion of speech to text is performed by Google's on-device/system speech service, which Biteaze does not operate.
+  </div>
+  <p>On a paid Gemini project such as ours, Google states that it does not use the prompts or responses to train its models. Google retains limited abuse-detection logs under its own policies. We do not make automated decisions that produce legal or similarly significant effects on you using this feature — it simply turns your words into a draft bill that you confirm. You can choose not to use voice billing at all.</p>
+
+  <!-- 9 -->
+  <h2 id="s09"><span class="num">9.</span> App permissions &amp; what we do NOT collect</h2>
+  <p>The app declares only the following Android permissions, each for a single, narrow purpose:</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Permission</th><th>Why it is used</th></tr></thead>
+    <tbody>
+      <tr><td><code>RECORD_AUDIO</code></td><td><strong>Only</strong> while you are actively using voice billing (foreground, after you tap the mic). There is no background or continuous recording. You are asked for runtime consent before the mic is used. See Section 8 for how the audio is handled by the device's Google speech service.</td></tr>
+      <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Networking and connectivity checks, for cloud sync and online features.</td></tr>
+      <tr><td><code>BLUETOOTH_CONNECT</code>, <code>BLUETOOTH_SCAN</code> (flagged "never for location"), legacy <code>BLUETOOTH</code> / <code>BLUETOOTH_ADMIN</code></td><td><strong>Only</strong> to connect to a thermal 58&nbsp;mm ESC/POS receipt printer that you have paired. Bluetooth is never used to derive your location. Printing is optional.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The Google Analytics for Firebase SDK also declares the Android Advertising ID permission (<code>com.google.android.gms.permission.AD_ID</code>); we use the resulting identifier for analytics only, never for advertising (see Section 19).</p>
+  <p>The app also uses a secure <code>FileProvider</code> so that <em>you</em> can share or save your <strong>own</strong> exported reports (PDF/CSV) via a content link. This needs no external storage permission and does not give us access to your files.</p>
+  <div class="note">
+    <span class="label">We do NOT collect</span>
+    No precise or coarse <strong>location</strong>, no <strong>camera</strong> capture, no <strong>contacts</strong>, no <strong>photos or media</strong>, no <strong>SMS</strong>, no <strong>call logs</strong>, and no background audio. Biteaze does not itself collect or store microphone audio (speech-to-text is handled by the device's Google system service — see Section 8). Image upload is disabled — the app does not collect photos. We do not sell personal data, run no advertising or ad targeting, and share data with no data brokers.
+  </div>
+
+  <!-- 10 -->
+  <h2 id="s10"><span class="num">10.</span> Local storage &amp; the backup exclusion</h2>
+  <p>Biteaze Billing is <strong>offline-first</strong>. Your data is stored primarily in a local database on your device (built with Room). Android encrypts this storage at rest using its file-based encryption.</p>
+  <p>To protect your business and your customers' data, we deliberately <strong>exclude the local database and the draft-cart preferences (which can hold a customer name/phone) from Android's Google&nbsp;Drive auto-backup and cloud device-transfer</strong> (configured via the app's backup and data-extraction rules). This means your local data is <em>not</em> silently copied to Google Drive. The only cloud copy of your data is the Firebase sync you control (see Section 11). Local device-to-device transfer of the database is permitted (no third party receives a copy).</p>
+  <p>When you sign out or switch accounts, the local database is wiped from the device to keep accounts isolated.</p>
+
+  <!-- 11 -->
+  <h2 id="s11"><span class="num">11.</span> Cloud sync, isolation, lifecycle &amp; security</h2>
+  <p>If you are signed in and have an active entitlement with cloud backup enabled, your local data is mirrored to <strong>Cloud Firestore</strong> (part of Google Firebase) in your own private space at <code>users/{your-account-id}/…</code> (products, orders and line items, expenses, customers, staff, add-ons, variations, and inventory ledger).</p>
+  <ul>
+    <li><strong>Owner-scoped isolation.</strong> Our Firestore security rules default to "deny" and are strictly owner-scoped — you can only ever read or write data under your own account ID. You cannot access another user's data, and other users cannot access yours.</li>
+    <li><strong>Client integrity.</strong> Firebase App Check (Play Integrity) rejects requests from non-genuine app clients.</li>
+    <li><strong>Encryption.</strong> Data is encrypted in transit using HTTPS/TLS and at rest using Google Cloud's server-side encryption (note: this is encryption with Google-managed keys, not end-to-end encryption).</li>
+    <li><strong>Operator access.</strong> Biteaze operates a secure super-admin back-office portal (used only by authorised Biteaze staff, gated by a server-side custom claim) to run the service — for example, to provide support, manage subscriptions and billing, and monitor reliability and backup freshness. Administrative actions are recorded in audit logs. Our backend also computes the aggregated analytics described in Section 7.</li>
+  </ul>
+  <h3>11.1 Subscription, grace &amp; what happens to your cloud data</h3>
+  <p>To make the lifecycle of your cloud data clear:</p>
+  <ul>
+    <li><strong>While your subscription is active</strong> — your local data is mirrored to the cloud and you can read and write freely.</li>
+    <li><strong>After your subscription expires</strong> — uploading <em>new</em> data to the cloud is paused (it requires an active subscription), but your existing cloud data is retained and you can still <strong>read/pull</strong> it during a <strong>90-day post-expiry grace window</strong>. Your on-device data is unaffected and remains on your device.</li>
+    <li><strong>After the grace window and on prolonged inactivity</strong> — your cloud data is retained but frozen (read paused) unless you renew. We do not silently delete your business records the moment a subscription lapses. If we ever determine that an account is dormant and the purpose for holding the cloud data is no longer served, we will give you the advance notice required by the DPDP Rules before erasing it on inactivity grounds (see Section 14.1), after which we keep only what the law requires.</li>
+    <li><strong>If you delete your account</strong> — your cloud data is erased as described in Section 14.2, regardless of subscription status.</li>
+  </ul>
+
+  <!-- 12 -->
+  <h2 id="s12"><span class="num">12.</span> Who we share data with (processors &amp; sub-processors)</h2>
+  <p>We do <strong>not</strong> sell personal data and do not share it with advertisers or data brokers. We share data only with the service providers below, who act as our processors/sub-processors to run the app, and with authorities only where the law requires.</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Provider</th><th>Services used</th><th>What they handle</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Google — Firebase / Google Cloud</strong><br>(project <code>androidbilling-f801b</code>)</td>
+        <td>Authentication, Cloud Firestore, Cloud Functions, Firebase Analytics (Google Analytics for Firebase), Crashlytics, App Check (Play Integrity), Remote Config, Firebase Installations.</td>
+        <td>Account credentials and identifiers, your synced business/customer data, diagnostics and crash data, installation/analytics identifiers (including the Advertising ID), app-integrity tokens, configuration flags.</td>
+      </tr>
+      <tr>
+        <td><strong>Google — Gemini API</strong></td>
+        <td>Server-side AI parsing of voice-billing text (called only from our Cloud Function).</td>
+        <td>The transcribed text plus your item list — which may include a customer's name (never raw audio). See Section 8.</td>
+      </tr>
+      <tr>
+        <td><strong>Google — Play Services / Sign-In</strong></td>
+        <td>Optional Google account sign-in.</td>
+        <td>Your basic Google account email for authentication.</td>
+      </tr>
+      <tr>
+        <td><strong>Google — Android system speech (<code>SpeechRecognizer</code>)</strong></td>
+        <td>On-device/system speech-to-text used by the voice feature.</td>
+        <td>Your spoken audio is processed by Google's system component (on-device or on Google's servers, depending on your device). Governed by Google's terms; not operated by Biteaze.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Google processes this data as our processor/sub-processor under its own privacy and security commitments. Google's privacy information is available at <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a> and Firebase's privacy and security documentation at <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>. Google's relevant services hold ISO/IEC 27001 and SOC 1/2/3 certifications and encrypt data in transit and at rest.</p>
+  <p>We may also disclose data where required by a valid legal process, to comply with the law, to enforce our <a href="https://biteaze.com/terms">Terms of Service</a>, or to protect the rights, safety and security of our users, the public or Biteaze.</p>
+
+  <!-- 13 -->
+  <h2 id="s13"><span class="num">13.</span> International data transfers</h2>
+  <p>Your data is processed on Google Cloud (Firebase) infrastructure. Some Google data centres are located <strong>outside India</strong>, which means your personal data may be transferred across borders to Google as a processor in order to run the app.</p>
+  <p><strong>Under the DPDP Act (Section 16),</strong> transfers of personal data outside India are permitted to any country except those the Central Government may restrict by notification. We will honour any such restriction if and when notified.</p>
+  <p><strong>For information classified as SPDI under the SPDI Rules</strong> (such as passwords and payment-related data), any transfer outside India is made only to recipients that ensure the same level of data protection that the SPDI Rules require, and only where the transfer is necessary for performance of the service or where you have consented to it (Rule 7 of the SPDI Rules). We will also comply with any sector-specific law that requires higher protection or local storage of payment-related data.</p>
+  <p>Wherever your data is processed, the protections described in this policy and our providers' contractual safeguards continue to apply.</p>
+
+  <!-- 14 -->
+  <h2 id="s14"><span class="num">14.</span> Data retention &amp; deletion</h2>
+
+  <h3>14.1 How long we keep data</h3>
+  <p>We keep personal data only as long as needed for the purpose it was collected, or as long as the law requires. Where the DPDP Rules require us to erase data after a defined period of non-use, we will do so, and — where the Rules require it — we will give you the prescribed advance notice before erasing data on inactivity grounds so that you have the chance to keep your account active.</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Data</th><th>Retention</th></tr></thead>
+    <tbody>
+      <tr><td>Your account, business, customer, staff and cloud-synced data</td><td>Kept while your account is active. If your account remains inactive for a sustained period (we currently use an inactivity threshold of <strong>24 months</strong> of no sign-in or use), we may erase it after giving you the advance notice the DPDP Rules require. Erased earlier if you delete your account (see 14.2). We keep only what the law then requires.</td></tr>
+      <tr><td>On-device local data</td><td>On your device until you delete it, sign out, or switch accounts (sign-out/switch wipes it for isolation).</td></tr>
+      <tr><td>Voice-billing text</td><td>Processed transiently to return the parsed result; not retained by Biteaze as a standing record. Google's limited abuse-detection logs are subject to Google's policies.</td></tr>
+      <tr><td>Diagnostics / crash data</td><td>Retained for a limited period in line with Google's Firebase Analytics and Crashlytics retention policies.</td></tr>
+      <tr><td>Anti-abuse identity hash (<code>trial_history</code>)</td><td><strong>Deliberately retained even after account deletion</strong> — see 14.3.</td></tr>
+      <tr><td>Records required by law (e.g. tax/financial)</td><td>Kept only for as long as the applicable law requires.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>14.2 How to delete your account &amp; data</h3>
+  <p>You can delete your account and your cloud data in any of these ways:</p>
+  <ul class="do-list">
+    <li><strong>In the app:</strong> go to <em>More → Profile → Delete Account</em>, then type <code>DELETE</code> to confirm. This calls our <code>deleteAccount</code> Cloud Function, which erases your Firebase Authentication account and all of your cloud data (your <code>users/{uid}</code> records and subcollections, and your subscription document).</li>
+    <li><strong>On the web:</strong> visit <a href="https://biteaze.com/account-deletion">https://biteaze.com/account-deletion</a> and follow the instructions. You do not need to be signed in to the app to submit a deletion request there.</li>
+    <li><strong>By email:</strong> write to <a href="mailto:support@biteaze.com">support@biteaze.com</a> from your registered email address; after we verify your identity, we process the deletion.</li>
+  </ul>
+  <div class="note">
+    <span class="label">Deletion timeline (all channels)</span>
+    In-app and web deletions are processed <strong>immediately and irreversibly</strong>. Email requests are completed promptly after we verify your identity and, in any event, <strong>within 30 days</strong> of a verified request. Account deletion is permanent — there is no undo and no grace period for the account itself (this is separate from the 90-day subscription read-grace in Section 11.1). On completion, we send a confirmation to your registered email address. Signing out or switching accounts also wipes the local on-device database.
+  </div>
+
+  <h3>14.3 What is retained after deletion (and why)</h3>
+  <div class="note warn">
+    <span class="label">Disclosure — data kept after you delete your account</span>
+    <ul style="margin:6px 0 0;">
+      <li><strong>The anti-abuse identity hash.</strong> To prevent abuse of our free trial (trial-farming), we keep a one-way <strong>hashed</strong> record in our <code>trial_history</code> ledger. We cannot reverse this hash to recover your underlying identity, and we do not use it to contact you or build a profile; we use it solely to detect and block repeated trial sign-ups. We treat it as personal data held in pseudonymised form, processed to protect the integrity and security of our service. It is <strong>intentionally not deleted</strong> when you delete your account.</li>
+      <li><strong>Records the law requires us to keep</strong> — for example certain tax or financial records — kept only for as long as the law requires.</li>
+    </ul>
+    Apart from these exceptions, account deletion erases your personal data from our systems.
+  </div>
+
+  <!-- 15 -->
+  <h2 id="s15"><span class="num">15.</span> Your rights &amp; how to exercise them</h2>
+  <p>As a Data Principal under the DPDP Act, you have the following rights with respect to your own personal data:</p>
+  <ul>
+    <li><strong>Right to access (Section 11)</strong> — to obtain a summary of the personal data we process about you and the processing activities we undertake on it; and the identities of all other Data Fiduciaries and Data Processors with whom we have shared your personal data, together with a description of the personal data so shared.</li>
+    <li><strong>Right to correction &amp; erasure (Section 12)</strong> — to correct, complete, update or erase your personal data. Much of this you can do directly in the app; for the rest, contact us.</li>
+    <li><strong>Right to grievance redressal (Section 13)</strong> — to a readily-available means of raising a grievance with us (see Section 16).</li>
+    <li><strong>Right to nominate (Section 14)</strong> — to nominate another individual to exercise your rights in the event of your death or incapacity.</li>
+    <li><strong>Right to withdraw consent (Section 6(4)–(6))</strong> — withdrawal is as easy as giving consent and we will stop the related processing. Withdrawal applies to consent-based processing only; it does not affect processing carried out under a "legitimate use" (Section 7) or a legal obligation, nor the lawfulness of processing carried out before withdrawal. See Section 7.1 for how to withdraw each consent.</li>
+  </ul>
+  <p>Where the SPDI Rules apply, you also have the right to be informed of, and to opt out of, the collection of sensitive personal information, and to withdraw consent.</p>
+  <p><strong>How to exercise your rights:</strong> use the in-app controls where available, or contact our Grievance Officer at <a href="mailto:support@biteaze.com">support@biteaze.com</a> from your registered email. We may need to verify your identity. We will respond within the timelines in Section 16.</p>
+  <div class="note">
+    <span class="label">Requests about a merchant's customers</span>
+    If you are an end customer of a business that uses Biteaze Billing and you want to exercise rights over data that business holds about you, please contact that business — it is the Data Fiduciary for that data (see Section 6). If such a request reaches us, we will route it to the responsible business as its Processor.
+  </div>
+
+  <!-- 16 -->
+  <h2 id="s16"><span class="num">16.</span> Grievance Officer &amp; the Data Protection Board</h2>
+  <p>In accordance with <strong>Section 13 (right to grievance redressal)</strong> and <strong>Section 8(9) (publication of the contact details of a person able to answer questions on behalf of the Data Fiduciary)</strong> of the DPDP Act, and <strong>Rule 5(9) of the SPDI Rules, 2011</strong>, we have designated a Grievance Officer to address your privacy questions, requests and complaints:</p>
+  <div class="contact-card">
+    <h4>Grievance Officer — Biteaze Solutions LLP</h4>
+    <div class="row"><span>Name</span> Shreyash Karnavat</div>
+    <div class="row"><span>Email</span> <a href="mailto:support@biteaze.com">support@biteaze.com</a></div>
+    <div class="row"><span>Address</span> Ground Floor, Shop No-6, 8/2295, Satkar Building, Dhundhiyawadi, Palanpur, District Banaskantha, Gujarat 385001, India</div>
+    <div class="row"><span>Response time</span> We acknowledge promptly and aim to resolve grievances <strong>within one month (30 days)</strong> of receipt, in line with the stricter of the applicable timelines.</div>
+  </div>
+  <p><strong>Escalating to the Board.</strong> If you are not satisfied with our response — or if we do not respond within the time above — you may make a complaint to the <strong>Data Protection Board of India</strong>. The Board is being operationalised under the DPDP Act and the DPDP Rules, 2025; complaints are to be made in the form and manner prescribed by the Board (including through any official portal the Board notifies for this purpose). We will provide reasonable assistance to identify the correct route on request.</p>
+
+  <!-- 17 -->
+  <h2 id="s17"><span class="num">17.</span> Children's data</h2>
+  <p>Biteaze Billing is a <strong>business tool intended for businesses and adults (18 years and older)</strong>. It is not directed to, or intended for use by, children. Under the DPDP Act, a "child" is anyone under 18.</p>
+  <p>We do <strong>not</strong> knowingly process the personal data of a child except with the verifiable consent of a parent or lawful guardian as required by <strong>Section 9 of the DPDP Act</strong>, obtained through the verifiable-consent mechanism prescribed by the DPDP Rules. We do <strong>not</strong> carry out tracking, behavioural monitoring or targeted advertising directed at children (Section 9(3)) — the app contains no advertising of any kind. We rely on the adult-only nature of the service and on age-affirmation at sign-up by the account holder.</p>
+  <p>The realistic child-data scenario for a point-of-sale app is a <em>merchant</em> entering a customer or staff member who is under 18. In that case the merchant is the Data Fiduciary (see Section 6) and <strong>must not</strong> enter that person's data without the consent the DPDP Act requires; Biteaze does not knowingly process such data as a Processor. If you believe a child's data has been provided to us, please contact our Grievance Officer so we can take appropriate action.</p>
+
+  <!-- 18 -->
+  <h2 id="s18"><span class="num">18.</span> Security practices</h2>
+  <p>We maintain reasonable security safeguards aligned with the DPDP Rules, 2025 and the "reasonable security practices and procedures" standard under the IT Act / SPDI Rules, for which IS/ISO/IEC 27001 is the recognised benchmark. We <strong>align our own practices with ISO/IEC 27001 principles; Biteaze is not itself ISO/IEC 27001 certified</strong> (our infrastructure provider, Google, is). Our measures include:</p>
+  <ul>
+    <li><strong>Encryption</strong> of personal data in transit (HTTPS/TLS) and at rest (Google Cloud server-side encryption); the local on-device database is protected by Android's file-based encryption, and the cached entitlement token is protected using Android Keystore-backed encryption.</li>
+    <li><strong>Strict access control</strong> — default-deny, owner-scoped Firestore rules; administrative access limited to authorised staff via server-side custom claims.</li>
+    <li><strong>Client integrity</strong> — App Check (Play Integrity) to reject non-genuine clients.</li>
+    <li><strong>Logging &amp; monitoring</strong> — audit logs of administrative actions and operational monitoring of reliability and backup freshness.</li>
+    <li><strong>Backups</strong> of cloud data and a documented incident-response process.</li>
+    <li><strong>Processor safeguards</strong> — we rely on providers (Google/Firebase) that maintain ISO/IEC 27001 and SOC 1/2/3 controls.</li>
+  </ul>
+  <div class="note warn">
+    <span class="label">Breach notification</span>
+    No system can be guaranteed perfectly secure. In the event of a personal-data breach, we will <strong>notify each affected Data Principal without delay</strong> and <strong>intimate the Data Protection Board of India without delay</strong>, and we will furnish the Board with the prescribed detailed particulars within the timeframe required by the DPDP Rules, 2025 (currently within 72 hours of becoming aware of the breach, or such longer period as the Board may allow), in the form and manner those Rules require.
+  </div>
+
+  <!-- 19 -->
+  <h2 id="s19"><span class="num">19.</span> Diagnostics, analytics &amp; identifiers</h2>
+  <p>To keep the app reliable and to understand and improve how features are used, the bundled Google/Firebase SDKs process:</p>
+  <ul>
+    <li><strong>Firebase Analytics (Google Analytics for Firebase)</strong> — app interaction/usage events, plus device and installation identifiers (such as the Firebase Installation ID and an app-instance ID). The SDK also collects the <strong>Android Advertising ID</strong> (and declares the corresponding <code>AD_ID</code> permission). We use these to understand feature usage and improve the app — <strong>not for advertising, ad targeting or profiling</strong>. You can reset or limit the Advertising ID in your Android device's "Privacy → Ads" settings.</li>
+    <li><strong>Crashlytics</strong> — crash stack traces, non-fatal error reports, device model, OS version and app version, to diagnose and fix stability problems.</li>
+    <li><strong>Remote Config</strong> — used for a force-update / kill-switch (a minimum-supported-version flag). Configuration is pulled to the app; no personal data is sent for this.</li>
+    <li><strong>App Check &amp; Installations</strong> — short-lived integrity tokens and Firebase Installation IDs used for security and to operate the services.</li>
+  </ul>
+  <p>These SDK identifiers function similarly to cookies on the web. We use no third-party analytics beyond Firebase, and no advertising SDKs or ad networks.</p>
+  <p><strong>Anti-abuse hash:</strong> as noted in Section 14.3, we keep a one-way hashed identity record in <code>trial_history</code> to prevent trial abuse. We cannot reverse it to identify you; we treat it as personal data held in pseudonymised form and retain it even after account deletion to protect the integrity of our trial system.</p>
+
+  <!-- 20 -->
+  <h2 id="s20"><span class="num">20.</span> Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time to reflect changes in the app, our practices, or the law. When we make material changes, we will update the "Last updated" date at the top and, where appropriate, notify you in the app or by email. The current version is always available at <a href="https://biteaze.com/privacy">https://biteaze.com/privacy</a>; previous versions are available on request from <a href="mailto:support@biteaze.com">support@biteaze.com</a>.</p>
+  <p>For changes that simply clarify or improve this policy, your continued use of the app after the update means you accept the revised policy. However, <strong>where a change introduces a new purpose for processing that requires your consent under the DPDP Act, we will ask for your fresh consent</strong> rather than rely on continued use.</p>
+  <p><strong>Effective date:</strong> 26 June 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 26 June 2026.</p>
+
+  <!-- 21 -->
+  <h2 id="s21"><span class="num">21.</span> Governing law &amp; jurisdiction</h2>
+  <p>This Privacy Policy is governed by the laws of India. Any dispute arising in connection with it is subject to the exclusive jurisdiction of the competent courts at Banaskantha, Gujarat, India, without prejudice to your rights under the DPDP Act, including the right to approach the Data Protection Board of India.</p>
+
+  <!-- 22 -->
+  <h2 id="s22"><span class="num">22.</span> Contact summary</h2>
+  <div class="contact-card">
+    <h4>Biteaze Solutions LLP — Data Fiduciary</h4>
+    <div class="row"><span>App</span> Biteaze Billing (Android) · <code>com.aistudio.voicebillingpos.jyxqwt</code></div>
+    <div class="row"><span>Registered office</span> Ground Floor, Shop No-6, 8/2295, Satkar Building, Dhundhiyawadi, Palanpur, District Banaskantha, Gujarat 385001, India</div>
+    <div class="row"><span>Email / Grievance</span> <a href="mailto:support@biteaze.com">support@biteaze.com</a></div>
+    <div class="row"><span>Grievance Officer</span> Shreyash Karnavat</div>
+    <div class="row"><span>Privacy policy</span> <a href="https://biteaze.com/privacy">https://biteaze.com/privacy</a></div>
+    <div class="row"><span>Delete account</span> <a href="https://biteaze.com/account-deletion">https://biteaze.com/account-deletion</a></div>
+  </div>
+
+  <p style="text-align:right;"><a class="backtop" href="#">↑ Back to top</a></p>
+
+  <footer class="foot">
+    © 2026 Biteaze Solutions LLP. All rights reserved. &nbsp;·&nbsp; Biteaze Billing Privacy Policy &nbsp;·&nbsp; Effective 26 June 2026.
+  </footer>
+
+</div>
+</main>
+</div>
+
+</body>
+</html>
