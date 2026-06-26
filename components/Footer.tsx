@@ -217,11 +217,11 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t-2 border-zinc-950 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
            <div className="flex items-center gap-2">
-            <span className="font-['Archivo_Black'] text-xl text-zinc-950">BITEAZE © 2026</span>
+            <span className="font-['Archivo_Black'] text-xl text-zinc-950">BITEAZE © {new Date().getFullYear()}</span>
           </div>
           
           <div className="flex gap-4 font-mono text-xs font-bold text-zinc-950 uppercase">
-            <a href="#" className="hover:underline">Privacy Policy</a>
+            <a href="/website-privacy" className="hover:underline">Privacy Policy</a>
             <a href="#" className="hover:underline">Terms of Service</a>
           </div>
         </div>

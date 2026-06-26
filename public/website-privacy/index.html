@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Privacy Policy — Biteaze Solutions LLP</title>
+<meta name="description" content="Privacy policy for the biteaze.com marketing website. We only collect what you type into our contact form, set no cookies of our own, and run no analytics or tracking. Covers the website only — the Biteaze Billing app has a separate policy at biteaze.com/privacy.">
+<style>
+  :root{
+    --orange:#f97316;
+    --orange-dark:#c2540a;
+    --orange-tint:#fff4ec;
+    --ink:#1f2430;
+    --ink-soft:#3b4250;
+    --muted:#5c6575;
+    --line:#e6e8ee;
+    --line-strong:#d3d7e0;
+    --bg:#ffffff;
+    --bg-soft:#f7f8fb;
+    --bg-card:#ffffff;
+    --shadow:0 1px 2px rgba(17,24,39,.04),0 8px 24px rgba(17,24,39,.06);
+    --radius:14px;
+    --radius-sm:10px;
+    --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:var(--font);
+    color:var(--ink);
+    background:var(--bg-soft);
+    line-height:1.65;
+    font-size:16.5px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 80px;}
+  header.masthead{
+    background:linear-gradient(135deg,#fff 0%,var(--orange-tint) 100%);
+    border-bottom:1px solid var(--line);
+    padding:38px 0 30px;
+  }
+  header.masthead .wrap{padding-bottom:0;}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;font-size:1.15rem;color:var(--ink);}
+  .brand .dot{
+    width:30px;height:30px;border-radius:8px;background:var(--orange);
+    display:inline-flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:1rem;box-shadow:0 4px 10px rgba(249,115,22,.35);
+  }
+  h1{font-size:2rem;line-height:1.2;margin:18px 0 6px;letter-spacing:-.02em;font-weight:800;color:var(--ink);}
+  .sub{color:var(--muted);font-size:1rem;margin:0;}
+  .meta-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .pill{background:#fff;border:1px solid var(--line-strong);border-radius:999px;padding:5px 12px;font-size:.82rem;color:var(--ink-soft);font-weight:600;}
+  .pill b{color:var(--orange-dark);}
+  main{background:var(--bg);margin-top:24px;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+  .main-pad{padding:30px 34px;}
+  .summary{border:1px solid var(--line-strong);border-left:4px solid var(--orange);background:var(--orange-tint);border-radius:var(--radius-sm);padding:20px 22px;margin:0 0 28px;}
+  .summary h2{margin:0 0 10px;font-size:1.1rem;border:none;padding:0;}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .summary li{margin:6px 0;}
+  .summary .nutshell{font-size:.95rem;color:var(--ink-soft);margin:0 0 4px;}
+  nav.toc{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 22px;margin:0 0 30px;}
+  nav.toc h2{font-size:1rem;margin:0 0 10px;border:none;padding:0;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+  nav.toc ol{margin:0;padding-left:22px;columns:2;column-gap:28px;}
+  nav.toc li{margin:4px 0;break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;}
+  nav.toc a:hover{color:var(--orange-dark);text-decoration:underline;}
+  h2{font-size:1.32rem;margin:38px 0 14px;letter-spacing:-.01em;font-weight:800;color:var(--ink);border-top:1px solid var(--line);padding-top:26px;}
+  h2:first-of-type{border-top:none;padding-top:0;}
+  h2 .num{color:var(--orange);font-variant-numeric:tabular-nums;}
+  h3{font-size:1.08rem;margin:22px 0 8px;font-weight:700;color:var(--ink);}
+  h4{font-size:.98rem;margin:16px 0 6px;font-weight:700;color:var(--ink-soft);}
+  p{margin:10px 0;color:var(--ink-soft);}
+  a{color:var(--orange-dark);}
+  ul,ol{color:var(--ink-soft);}
+  li{margin:6px 0;}
+  strong{color:var(--ink);}
+  .lead{font-size:1.02rem;color:var(--ink-soft);}
+  .table-scroll{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:var(--radius-sm);}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:560px;}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:var(--bg-soft);font-weight:700;color:var(--ink);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;}
+  tr:last-child td{border-bottom:none;}
+  td code{font-size:.85em;}
+  .note{background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:14px 18px;margin:16px 0;font-size:.94rem;}
+  .note.warn{border-left:4px solid var(--orange);background:var(--orange-tint);}
+  .note .label{display:block;font-weight:800;color:var(--orange-dark);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+  code{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;color:var(--ink);}
+  .contact-card{border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:18px 20px;background:#fff;margin:16px 0;}
+  .contact-card h4{margin-top:0;color:var(--orange-dark);}
+  .contact-card .row{margin:4px 0;font-size:.95rem;}
+  .contact-card .row span{display:inline-block;min-width:130px;color:var(--muted);font-weight:600;}
+  .do-list li::marker{color:var(--orange);}
+  hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0;}
+  footer.foot{text-align:center;color:var(--muted);font-size:.85rem;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);}
+  .backtop{font-size:.8rem;}
+  @media (max-width:680px){
+    body{font-size:16px;}
+    h1{font-size:1.6rem;}
+    h2{font-size:1.18rem;}
+    .main-pad{padding:22px 18px;}
+    nav.toc ol{columns:1;}
+    header.masthead{padding:28px 0 22px;}
+    .contact-card .row span{min-width:0;display:block;margin-bottom:1px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="brand"><span class="dot">B</span> Biteaze</span>
+    <h1>Website Privacy Policy</h1>
+    <p class="sub">For the <strong>biteaze.com</strong> marketing website, published by <strong>Biteaze Solutions LLP</strong>.</p>
+    <div class="meta-pills">
+      <span class="pill">Effective date: <b>26 June 2026</b></span>
+      <span class="pill">Last updated: <b>26 June 2026</b></span>
+      <span class="pill">Applies to: <b>biteaze.com (website)</b></span>
+      <span class="pill">Version <b>1.0</b></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+<div class="main-pad">
+
+  <section class="summary" aria-label="Plain-language summary">
+    <h2>In plain language (the short version)</h2>
+    <p class="nutshell">This summary is for quick understanding only. The full policy below is the legally binding version.</p>
+    <ul>
+      <li>This is the <strong>website</strong> policy &mdash; the Biteaze Billing app has its own separate policy at <a href="https://biteaze.com/privacy">biteaze.com/privacy</a>.</li>
+      <li>The only personal data we collect is what you type into our <strong>contact form</strong> (name, brand name, email, phone, and what you&rsquo;re interested in) &mdash; and we use it only to reply to your enquiry.</li>
+      <li>We <strong>do not track you</strong>: no Google Analytics or any analytics tool, no advertising or tracking pixels, no marketing cookies, and we set <strong>no cookies of our own</strong>. There is no cookie banner because there is nothing to consent to.</li>
+      <li>Our <strong>ROI calculator</strong> runs entirely in your browser &mdash; the numbers you enter are never sent to us or stored anywhere.</li>
+      <li>Simply loading the page fetches fonts, styles and our logo from Google Fonts, the Tailwind CSS CDN and Supabase, and reaches our hosting/CDN provider, which means your <strong>IP address and browser User-Agent</strong> are visible to those providers, as with any website.</li>
+      <li>Your enquiry is stored as a single record in our database hosted on <strong>Supabase</strong>, whose servers may be located <strong>outside India</strong>.</li>
+      <li>You can ask us to see, correct or erase your data, or to stop using it, at any time &mdash; just email <a href="mailto:support@biteaze.com">support@biteaze.com</a>.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#s01">Who we are &amp; how to contact us</a></li>
+      <li><a href="#s02">Scope of this policy</a></li>
+      <li><a href="#s03">Key terms</a></li>
+      <li><a href="#s04">What personal data we collect</a></li>
+      <li><a href="#s05">What we do NOT collect — no cookies or tracking</a></li>
+      <li><a href="#s06">Cookies, third parties &amp; data sharing</a></li>
+      <li><a href="#s07">Why we use your data — lawful basis</a></li>
+      <li><a href="#s08">International data transfers</a></li>
+      <li><a href="#s09">Data retention &amp; deletion</a></li>
+      <li><a href="#s10">Your rights &amp; how to exercise them</a></li>
+      <li><a href="#s11">Children's data</a></li>
+      <li><a href="#s12">Grievance Officer &amp; the Data Protection Board</a></li>
+      <li><a href="#s13">Personal data breach</a></li>
+      <li><a href="#s14">Security practices</a></li>
+      <li><a href="#s15">Legal framework &amp; changes to this policy</a></li>
+      <li><a href="#s16">Governing law &amp; jurisdiction</a></li>
+      <li><a href="#s17">Contact summary</a></li>
+    </ol>
+  </nav>
+
+  <p>This Privacy Policy explains how <strong>Biteaze Solutions LLP</strong> (&ldquo;Biteaze&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) handles personal data in connection with our marketing website at <strong>biteaze.com</strong>. We have written it in plain language and kept it deliberately short, because this website collects very little: the only personal data we actively collect is what you choose to type into our contact form. We are the <strong>Data Fiduciary</strong> responsible for that data, and we handle it in line with India&rsquo;s Digital Personal Data Protection Act, 2023 (the &ldquo;DPDP Act&rdquo;), the Digital Personal Data Protection Rules, 2025 (the &ldquo;DPDP Rules&rdquo;), and the Information Technology Act, 2000 (including Section 43A) together with the IT (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 (the &ldquo;SPDI Rules&rdquo;). The DPDP Act and DPDP Rules are being brought into force on a phased basis; where their provisions are not yet operative on the effective date of this policy, we describe them as obligations we will comply with as and when they commence, and the IT Act and SPDI Rules remain operative in the interim.</p><div class="note warn"><span class="label">Website only</span> This Privacy Policy applies <strong>only</strong> to our marketing website at biteaze.com. Our <strong>Biteaze Billing</strong> Android application is a separate product with its own data practices and is governed by a separate privacy policy available at <a href="https://biteaze.com/privacy">https://biteaze.com/privacy</a>. If you use the app, that policy &mdash; not this one &mdash; applies to your in-app data.</div>
+
+  <div class="note warn"><span class="label">What this website does NOT do</span> To be completely clear: this website sets <strong>no cookies of its own</strong>; uses <strong>no Google Analytics or any other analytics tool or SDK</strong>; uses <strong>no advertising, marketing or retargeting pixels or tags</strong>; uses <strong>no social-media trackers</strong>; performs <strong>no device fingerprinting, behavioural profiling or cross-site tracking</strong>; stores <strong>no personal data in your browser&rsquo;s <code>localStorage</code> or <code>sessionStorage</code></strong>; does <strong>not store or transmit anything from the ROI calculator</strong> (it runs entirely in your browser); creates <strong>no user accounts and no newsletter sign-ups</strong>; sends <strong>no OTPs or SMS messages and runs no phone-verification</strong>; and does <strong>not sell your personal data</strong>. The only cookies that may be present are strictly-necessary infrastructure/security cookies set by our hosting/CDN provider (Vercel now, Cloudflare Pages in future), and the only third-party data flow is the unavoidable transmission of your IP address and browser User-Agent when your browser loads fonts (Google Fonts), the Tailwind CSS CDN and our logo image (Supabase Storage), and when it reaches our hosting/CDN provider.</div>
+
+  <h2 id="s01"><span class="num">1.</span> Who we are &amp; how to contact us</h2>
+  <p><strong>Biteaze Solutions LLP</strong> (&ldquo;Biteaze&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;), a Limited Liability Partnership registered in India, is the <strong>Data Fiduciary</strong> responsible for the personal data described in this policy &mdash; that is, we determine the purpose and means of processing it.</p><div class="contact-card"><h4>Data Fiduciary</h4><div class="row"><span>Entity</span> Biteaze Solutions LLP</div><div class="row"><span>Registered office</span> Ground Floor, Shop No-6, 8/2295, Satkar Building, Dhundhiyawadi, Palanpur, District Banaskantha, Gujarat 385001, India</div><div class="row"><span>Email</span> <a href="mailto:support@biteaze.com">support@biteaze.com</a></div><div class="row"><span>Grievance Officer</span> Shreyash Karnavat (see Section 12)</div></div>
+
+  <h2 id="s02"><span class="num">2.</span> Scope of this policy</h2>
+  <p>This Privacy Policy applies <strong>only</strong> to the Biteaze marketing website at <strong>biteaze.com</strong> &mdash; a single-page website describing our food-and-beverage consulting and management services.</p><p>Our <strong>Biteaze Billing</strong> Android application is a separate product with its own data practices &mdash; including voice billing, on-device storage, cloud sync and in-app diagnostics &mdash; and is governed by a separate privacy policy. For anything to do with the app, please see that policy instead of this one.</p><div class="note"><span class="label">App policy</span> The Biteaze Billing app is covered by a separate privacy policy at <a href="https://biteaze.com/privacy">https://biteaze.com/privacy</a>. Both policies share the same Data Fiduciary (Biteaze Solutions LLP) and the same Grievance Officer (Shreyash Karnavat).</div><p>The website also includes an <strong>ROI calculator</strong>. This is purely a calculator that runs in your browser &mdash; the numbers you enter are used only to perform the on-screen calculation and are never sent to us or to anyone else, and nothing is stored. It does not collect personal data and is therefore out of scope as a collection point.</p>
+
+  <h2 id="s03"><span class="num">3.</span> Key terms</h2>
+  <p>To keep this policy readable, here are the main terms we use, drawn from the DPDP Act:</p><ul><li><strong>Personal data</strong> &mdash; any data about an individual who is identifiable by or in relation to that data (for example, your name, email or phone number).</li><li><strong>Data Principal</strong> &mdash; the individual to whom the personal data relates. If you fill in our contact form, that&rsquo;s you.</li><li><strong>Data Fiduciary</strong> &mdash; the person who, alone or with others, decides the purpose and means of processing personal data. For this website, that is Biteaze Solutions LLP.</li><li><strong>Data Processor</strong> &mdash; a person who processes personal data on behalf of a Data Fiduciary. The service providers in Section 6 act as our processors or sub-processors.</li></ul>
+
+  <h2 id="s04"><span class="num">4.</span> What personal data we collect</h2>
+  <p>The only personal data we collect through this website is the information you choose to type into our <strong>contact / enquiry form</strong>. The table below itemises exactly what that is, together with the technical data that any website provider inherently receives when your browser loads a page.</p><div class="table-scroll"><table><thead><tr><th>Data</th><th>What it is</th><th>How we get it</th></tr></thead><tbody><tr><td>Name</td><td>The name you enter in the contact form.</td><td>You type it in</td></tr><tr><td>Brand Name</td><td>The name of your brand or business.</td><td>You type it in</td></tr><tr><td>Email</td><td>The email address you want us to reply to.</td><td>You type it in</td></tr><tr><td>Phone</td><td>Your phone number, which we store with a <code>+91</code> prefix.</td><td>You type it in</td></tr><tr><td>Service Interest</td><td>One option you select from a dropdown: Full Brand Development; Recipe &amp; Menu Engineering; Operations &amp; Staffing; Digital Strategy &amp; AI; or Franchise Management.</td><td>You select it</td></tr><tr><td>Technical data (IP &amp; User-Agent)</td><td>Your IP address and browser User-Agent, inherently received by our hosting provider and by the third-party providers whose assets the page loads (see Section 6).</td><td>Sent automatically by your browser to deliver the page</td></tr></tbody></table></div><p>On submission, your contact-form entry is saved as a single record in our database (the <code>leads</code> table on Supabase &mdash; see Section 6). The specified purpose for which you provide this data, and for which we use it, is to respond to and follow up on your enquiry.</p><div class="note"><span class="label">Not your data</span> The team and portfolio sections of the website display <strong>our own public content</strong>, which we read from our database. That content is about us, not about you, and is not visitor personal data.</div><p>We store your phone number with a <code>+91</code> prefix purely as a formatting convention. We do not verify it, and this website has no SMS, OTP or phone-verification integration of any kind &mdash; we do not send you OTPs or SMS messages.</p>
+
+  <h2 id="s05"><span class="num">5.</span> What we do NOT collect — no cookies or tracking</h2>
+  <p>This is a low-data marketing website, and we want to be completely clear about what it does <em>not</em> do.</p><div class="note"><span class="label">In short</span> This website does not track you. We do not use any analytics tool, we run no advertising or social-media pixels, and we set no cookies of our own. There is no cookie banner to click because there is nothing to consent to.</div><p>To be specific, this website does <strong>not</strong>:</p><ul><li>set any cookies of its own (its own code writes no cookies);</li><li>use Google Analytics or any other web-analytics tool or SDK;</li><li>use advertising, marketing or retargeting pixels or tags;</li><li>use social-media tracking buttons or trackers;</li><li>perform device fingerprinting, behavioural profiling or cross-site tracking;</li><li>store any personal data in your browser&rsquo;s <code>localStorage</code> or <code>sessionStorage</code>.</li></ul><p>The only cookies that may exist are <strong>strictly-necessary infrastructure or security cookies</strong> set by our hosting/CDN provider to deliver and protect the site &mdash; not by us, and not for analytics, advertising or profiling. These are covered in Section 6, and being strictly necessary they do not require your consent.</p>
+
+  <h2 id="s06"><span class="num">6.</span> Cookies, third parties &amp; data sharing</h2>
+  <p>We do not sell your personal data, and we do not share it for anyone else&rsquo;s marketing. We do, however, rely on a small number of service providers and load some assets from third parties. The table below names each one, what it does, and where it typically processes data.</p><div class="table-scroll"><table><thead><tr><th>Provider</th><th>Role</th><th>Data handled</th><th>Typical location</th></tr></thead><tbody><tr><td>Supabase (Supabase, Inc. &mdash; managed PostgreSQL database &amp; object storage)</td><td>Backend data store: holds the contact-form enquiries you submit (in our <code>leads</code> table), serves our own public team/portfolio content, and hosts our logo image in Supabase Storage.</td><td>Your contact-form details (Name, Brand Name, Email, Phone with +91 prefix, Service Interest). Our team/portfolio content and logo are our own data, not visitor personal data.</td><td>Supabase stores data on managed cloud infrastructure; depending on the chosen region, data may be stored outside India.</td></tr><tr><td>Vercel (Vercel Inc. &mdash; current website hosting / CDN)</td><td>Serves the biteaze.com website to your browser.</td><td>Standard server log data inherent to serving any request &mdash; IP address, approximate location derived from it, browser User-Agent, requested URLs and timestamps &mdash; plus Vercel&rsquo;s own essential infrastructure cookies. We do <strong>not</strong> run Vercel Web Analytics, Speed Insights or any analytics on this site.</td><td>Global infrastructure, including the United States; data may be processed outside India.</td></tr><tr><td>Cloudflare (Cloudflare, Inc. &mdash; planned future hosting / CDN)</td><td>Will serve and help secure the website once we migrate to Cloudflare Pages.</td><td>Standard request log data inherent to serving and protecting web requests &mdash; IP address, User-Agent, requested URLs &mdash; plus Cloudflare&rsquo;s own strictly-necessary security/bot-mitigation cookies. These are not advertising or cross-site tracking cookies.</td><td>Cloudflare operates a global network; by default request and cookie data may be processed in the United States; data may be processed outside India. (Planned &mdash; applies upon migration.)</td></tr><tr><td>Google Fonts (Google LLC)</td><td>Delivers the website&rsquo;s display fonts from fonts.googleapis.com and fonts.gstatic.com.</td><td>When your browser requests a font, it necessarily sends your IP address, the requested URL on Google&rsquo;s server, and HTTP headers including your browser User-Agent. The Google Fonts API does not set or log cookies, and Google states it does not use this data to build advertising profiles of visitors.</td><td>Google serves fonts from global infrastructure, including the United States; this is a transfer outside India.</td></tr><tr><td>Tailwind CSS CDN (cdn.tailwindcss.com)</td><td>Delivers the Tailwind CSS framework styles that lay out and style the website.</td><td>When your browser fetches the stylesheet, it necessarily sends your IP address and browser User-Agent. No cookies are set by us through this; we use it only to deliver styling.</td><td>Served from a global content-delivery network; data may be processed outside India.</td></tr></tbody></table></div><h4>Assets loaded from third parties and your IP address</h4><p>Like most websites, some elements are loaded from third-party services rather than from our own servers: web fonts from <strong>Google Fonts</strong> (fonts.googleapis.com and fonts.gstatic.com), styling from the <strong>Tailwind CSS CDN</strong> (cdn.tailwindcss.com), and our logo image from <strong>Supabase Storage</strong>. Whenever your browser fetches a file from another company&rsquo;s servers, it must send that company your IP address and browser User-Agent so the file can be delivered. We do not control what these providers do with that information; their handling is governed by their own privacy policies &mdash; see Google (<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>) and Supabase (<a href="https://supabase.com/privacy">https://supabase.com/privacy</a>).</p><div class="note"><span class="label">Why we mention your IP address</span> In January 2022 a German court (Landgericht M&uuml;nchen I, 20 January 2022) held that a website which loaded Google Fonts directly from Google&rsquo;s servers had unlawfully disclosed the visitor&rsquo;s IP address to Google, because an IP address is personal data and the transfer happened without consent. That ruling is from Europe and is not binding in India, but we take the same point seriously: it is why we prefer to self-host assets where feasible and why we tell you, openly, when your IP address is shared simply by loading part of this page.</div><h4>Server logs</h4><p>Our hosting and CDN providers automatically keep server logs that include IP addresses, as happens with every web request, in order to deliver the site and protect it against attacks and abuse. These logs are not used to track, analyse or profile you.</p><h4>Processor contracts</h4><p><strong>Biteaze Solutions LLP is the Data Fiduciary</strong> for personal data collected through this website. The providers listed above act as Data Processors or sub-processors and process this data only to provide their services to us. Where the DPDP Act, Section 8(2), requires processing through a Data Processor to be under a valid contract, we engage these providers under their standard terms of service and applicable data-processing terms; where such provisions are not yet in force, we will ensure compliant processor contracts are in place as and when required.</p>
+
+  <h2 id="s07"><span class="num">7.</span> Why we use your data — lawful basis</h2>
+  <p>We use the information from the contact form for <strong>one purpose only</strong>: to respond to the consulting or sales enquiry that you have voluntarily submitted to us, and to follow up on it.</p><p>Our lawful basis is the <strong>legitimate use recognised in Section 7(a) of the DPDP Act</strong> &mdash; that is, the personal data that you have <strong>voluntarily provided</strong> to us for the specified purpose of answering your enquiry, and in respect of which you have not indicated to us that you do not consent to its use. Submitting the form is your voluntary provision of that data for that purpose. This basis is <em>not</em> consent under Section 6, so there is no &ldquo;consent&rdquo; for you to give or withdraw for this processing.</p><div class="note"><span class="label">You&rsquo;re in control</span> Although this processing is not consent-based, you remain in control: you may at any time tell us that you no longer wish us to use your enquiry, and ask us to <strong>stop processing and erase your enquiry record</strong>, simply by emailing <a href="mailto:support@biteaze.com">support@biteaze.com</a>. We will then cease using it and delete it, subject only to any legal obligation to retain certain information. The only practical consequence is that we will no longer be able to respond to your enquiry. Stopping use does not affect the lawfulness of any processing we carried out beforehand.</div><p>We would seek your separate <strong>consent under Section 6 of the DPDP Act</strong>, with a Section 5 notice describing the data, purposes and how to withdraw, before using your data for any purpose beyond responding to your enquiry (for example, unrelated marketing). This website does not do so, so no consent-based processing currently takes place here.</p>
+
+  <h2 id="s08"><span class="num">8.</span> International data transfers</h2>
+  <p>Some of our service providers &mdash; including Supabase, and our hosting/CDN providers Vercel and (in future) Cloudflare, as well as Google Fonts and the Tailwind CSS CDN &mdash; may store or process data on infrastructure located <strong>outside India</strong>, including in the United States. Loading fonts, styles and assets also transmits your IP address and User-Agent to providers located outside India.</p><p>To the extent the <strong>SPDI Rules, 2011</strong> govern such transfers in the interim, we transfer personal information only where necessary for the performance of the service you have requested, and we expect the recipient providers to maintain protection of the data on terms consistent with Rule 7 of the SPDI Rules. To the extent <strong>Section 16 of the DPDP Act</strong> is in force, that section permits transfers of personal data outside India to any country other than those the Central Government may restrict by notification. To our knowledge as at the effective date of this policy, no such notification currently restricts transfers to the jurisdictions in which the providers named above operate; if and when any such restriction is notified, we will honour it. We remain responsible for protecting your data wherever it is processed.</p><div class="note"><span class="label">Sensitive data</span> The enquiry fields we collect (name, brand name, email, phone and service interest) are not &ldquo;sensitive personal data or information&rdquo; as defined in Rule 3 of the SPDI Rules &mdash; we collect no passwords, financial/card details, health data or biometrics. The heightened consent and disclosure requirements that the SPDI Rules attach specifically to <em>sensitive</em> data are therefore largely not triggered. The transfer-protection expectation under Rule 7, however, applies to the transfer of personal information generally, and we apply it accordingly &mdash; we still expect our providers to protect the data appropriately.</div>
+
+  <h2 id="s09"><span class="num">9.</span> Data retention &amp; deletion</h2>
+  <p>We keep your enquiry record only for as long as we need it &mdash; that is, to respond to and follow up on your enquiry, and for the duration of any consulting relationship that results from it. After that, we delete or anonymise the record. This reflects our obligation as Data Fiduciary under <strong>Section 8(7) of the DPDP Act</strong> to erase personal data once the purpose for which it was collected is no longer being served and retention is no longer required by law.</p><p>You can ask us to delete your enquiry record sooner at any time by emailing <a href="mailto:support@biteaze.com">support@biteaze.com</a>, and we will also honour erasure requests made in exercise of your right under <strong>Section 12 of the DPDP Act</strong> (see Section 10), subject to any legal obligation to retain certain information.</p>
+
+  <h2 id="s10"><span class="num">10.</span> Your rights &amp; how to exercise them</h2>
+  <p>As a Data Principal you have the following rights under the DPDP Act in relation to the personal data we hold about you:</p><ul><li><strong>Access (Section 11)</strong> &mdash; to obtain a summary of the personal data we hold about you and how we process it.</li><li><strong>Correction &amp; erasure (Section 12)</strong> &mdash; to have your personal data corrected, completed, updated or erased.</li><li><strong>Grievance redressal (Section 13)</strong> &mdash; to have any grievance about our handling of your data addressed (see Section 12 of this policy).</li><li><strong>Nomination (Section 14)</strong> &mdash; to nominate another individual to exercise your rights in the event of your death or incapacity.</li></ul><p>Separately, because the processing of your enquiry is based on legitimate use rather than consent (see Section 7), you may at any time ask us to stop using and to erase your enquiry record.</p><p>To exercise any of these rights, simply email <a href="mailto:support@biteaze.com">support@biteaze.com</a>. As a <strong>voluntary service commitment</strong> (not a statutory deadline), we aim to acknowledge and respond to your request within <strong>30 days</strong>; where the DPDP Rules prescribe a specific period for responding to or resolving a particular type of request or grievance, we will comply with that prescribed period once it is in force.</p><div class="note"><span class="label">How to escalate</span> If you are not satisfied with our response, you may register a complaint with the <strong>Data Protection Board of India</strong>, in the manner provided under the DPDP Act and the DPDP Rules.</div>
+
+  <h2 id="s11"><span class="num">11.</span> Children's data</h2>
+  <p>This website is intended for businesses. As a matter of our own policy, it is <strong>not directed at children</strong>, and we ask that anyone under 18 does not submit the enquiry form.</p><p>Consistent with <strong>Section 9 of the DPDP Act</strong>, we do not undertake any tracking, behavioural monitoring or targeted advertising directed at children, and we would obtain verifiable consent of a parent or lawful guardian before processing a child&rsquo;s personal data if that were ever required. We do not knowingly collect the personal data of children through this website.</p><p>If we become aware that we have collected a child&rsquo;s personal data through the website, we will delete it. If you believe a child&rsquo;s data has been provided to us, please contact our Grievance Officer (see Section 12).</p>
+
+  <h2 id="s12"><span class="num">12.</span> Grievance Officer &amp; the Data Protection Board</h2>
+  <p>If you have any question or complaint about how we handle your personal data, please contact our Grievance Officer.</p><div class="contact-card"><h4>Grievance Officer / Contact Person</h4><div class="row"><span>Name</span> Shreyash Karnavat</div><div class="row"><span>Email</span> <a href="mailto:support@biteaze.com">support@biteaze.com</a></div><div class="row"><span>Address</span> Ground Floor, Shop No-6, 8/2295, Satkar Building, Dhundhiyawadi, Palanpur, District Banaskantha, Gujarat 385001, India</div><div class="row"><span>Response time</span> Within 30 days as a voluntary commitment; any period prescribed under the DPDP Rules honoured once in force</div></div><div class="note"><span class="label">Escalation</span> If you are not satisfied with our response, you have the right to register a complaint with the <strong>Data Protection Board of India</strong>, in the manner provided under the DPDP Act and the DPDP Rules.</div><p>Whether an entity is a <strong>Significant Data Fiduciary</strong> is determined by notification of the Central Government, based on factors set out in Section 10(1) of the DPDP Act &mdash; such as the volume and sensitivity of personal data processed and the risk to the rights of Data Principals &mdash; and not by the size of the company. Biteaze has not been so notified, so the additional Section 10 obligations (including appointment of a statutory Data Protection Officer) do not apply to us. We have instead named the contact person above, who is able to answer your questions about how we process your personal data.</p>
+
+  <h2 id="s13"><span class="num">13.</span> Personal data breach</h2>
+  <p>If we become aware of a personal data breach affecting your information, we will handle it in accordance with the breach-notification requirements of the DPDP Rules (Rule 7 read with the Third Schedule), to the extent those provisions are in force at the time, and otherwise in line with applicable law. Our approach is as follows:</p><ul><li><strong>To you (the affected Data Principal):</strong> we will give an intimation <strong>without delay</strong> on becoming aware of the breach, in concise and plain language, describing the nature, extent and timing of the breach, its likely consequences for you, the measures we have taken or are taking to mitigate it, the steps you can take to protect yourself, and contact details of a person who can answer your questions about the breach.</li><li><strong>To the Data Protection Board of India:</strong> we will give an initial intimation <strong>without delay</strong> on becoming aware of the breach, and will then provide the Board with detailed and updated particulars (including the events, circumstances and reasons for the breach, mitigation measures, findings about the person who caused it, remedial measures taken, and our notification to affected Data Principals) <strong>within 72 hours</strong> of becoming aware of the breach, or within such longer period as the Board may allow on a written request.</li></ul>
+
+  <h2 id="s14"><span class="num">14.</span> Security practices</h2>
+  <p>We apply <strong>reasonable, proportionate security practices and procedures</strong> appropriate to the limited volume and low sensitivity of the data we collect, in the spirit of Section 43A of the IT Act. These include:</p><ul><li>encryption in transit (HTTPS/TLS) for the website and form submissions;</li><li>storing enquiries in an access-controlled, managed PostgreSQL database (Supabase) with restricted credentials;</li><li>collecting the minimum data needed to respond to your enquiry; and</li><li>relying on reputable service providers (Supabase, Vercel and, in future, Cloudflare) that maintain their own security measures.</li></ul><div class="note warn"><span class="label">Honest note</span> Rule 8 of the SPDI Rules treats the IS/ISO 27001 standard (or an approved industry code) as one benchmark for &ldquo;reasonable security practices.&rdquo; We do <strong>not</strong> hold ISO/IEC 27001 or any other formal security certification, and we do not claim to. Instead, we apply security measures that are reasonable and proportionate to the low volume and low sensitivity of the data this website handles.</div>
+
+  <h2 id="s15"><span class="num">15.</span> Legal framework &amp; changes to this policy</h2>
+  <p>This policy is drafted with reference to the <strong>Digital Personal Data Protection Act, 2023</strong> and the <strong>Digital Personal Data Protection Rules, 2025</strong>, as well as the <strong>Information Technology Act, 2000</strong> (including Section 43A) and the <strong>SPDI Rules, 2011</strong>.</p><p>The DPDP framework is being brought into force on a phased basis, and the IT Act and SPDI Rules remain in force in the interim. Where a DPDP Act or DPDP Rules provision referred to in this policy is not yet operative on the effective date, we describe it as an obligation we will comply with as and when it commences. As provisions of the DPDP framework come into operation, we will update this policy accordingly.</p><p>We may update this policy from time to time &mdash; for example, if we change hosting from Vercel to Cloudflare Pages, or if we begin self-hosting fonts and assets. When we do, we will revise the &ldquo;Last updated&rdquo; date and version at the top of this policy. Material changes will be reflected here on this page.</p>
+
+  <h2 id="s16"><span class="num">16.</span> Governing law &amp; jurisdiction</h2>
+  <p>This policy is governed by the laws of <strong>India</strong>, and the competent courts at <strong>Banaskantha, Gujarat</strong> shall have exclusive jurisdiction over any matter arising from or in connection with it, without prejudice to your rights under the DPDP Act, including the right to approach the Data Protection Board of India.</p>
+
+  <h2 id="s17"><span class="num">17.</span> Contact summary</h2>
+  <p>For quick reference, here are our key details and the link to our separate app policy.</p><div class="contact-card"><h4>Quick reference</h4><div class="row"><span>Data Fiduciary</span> Biteaze Solutions LLP</div><div class="row"><span>Grievance Officer</span> Shreyash Karnavat</div><div class="row"><span>Email</span> <a href="mailto:support@biteaze.com">support@biteaze.com</a></div><div class="row"><span>Address</span> Ground Floor, Shop No-6, 8/2295, Satkar Building, Dhundhiyawadi, Palanpur, District Banaskantha, Gujarat 385001, India</div><div class="row"><span>App policy</span> <a href="https://biteaze.com/privacy">https://biteaze.com/privacy</a></div></div><div class="note"><span class="label">Reminder</span> This policy covers the biteaze.com website only. For the Biteaze Billing Android app &mdash; point-of-sale, voice billing, on-device and synced business data &mdash; please see our separate app privacy policy at <a href="https://biteaze.com/privacy">https://biteaze.com/privacy</a>.</div>
+
+  <p style="text-align:right;"><a class="backtop" href="#">↑ Back to top</a></p>
+
+  <footer class="foot">
+    © <span id="cpy-year">2026</span> Biteaze Solutions LLP. All rights reserved. &nbsp;·&nbsp; Website Privacy Policy &nbsp;·&nbsp; Effective 26 June 2026.
+  </footer>
+
+</div>
+</main>
+</div>
+
+<script>document.getElementById('cpy-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
