@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Account &amp; Data — Biteaze Billing | Biteaze Solutions LLP</title>
+<meta name="description" content="Request deletion of your Biteaze Billing account and data. In-app, on the web, or by email. What gets deleted, what is retained, and how long it takes.">
+<style>
+  :root{
+    --orange:#f97316;--orange-dark:#c2540a;--orange-tint:#fff4ec;
+    --ink:#1f2430;--ink-soft:#3b4250;--muted:#5c6575;
+    --line:#e6e8ee;--line-strong:#d3d7e0;--bg:#ffffff;--bg-soft:#f7f8fb;
+    --shadow:0 1px 2px rgba(17,24,39,.04),0 8px 24px rgba(17,24,39,.06);
+    --radius:14px;--radius-sm:10px;
+    --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg-soft);line-height:1.65;font-size:16.5px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px 80px;}
+  header.masthead{background:linear-gradient(135deg,#fff 0%,var(--orange-tint) 100%);border-bottom:1px solid var(--line);padding:38px 0 30px;}
+  header.masthead .wrap{padding-bottom:0;}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;font-size:1.15rem;color:var(--ink);}
+  .brand .dot{width:30px;height:30px;border-radius:8px;background:var(--orange);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1rem;box-shadow:0 4px 10px rgba(249,115,22,.35);}
+  h1{font-size:2rem;line-height:1.2;margin:18px 0 6px;letter-spacing:-.02em;font-weight:800;color:var(--ink);}
+  .sub{color:var(--muted);font-size:1rem;margin:0;}
+  main{background:var(--bg);margin-top:24px;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);}
+  .main-pad{padding:30px 34px;}
+  h2{font-size:1.3rem;margin:34px 0 12px;letter-spacing:-.01em;font-weight:800;color:var(--ink);border-top:1px solid var(--line);padding-top:26px;}
+  h2:first-of-type{border-top:none;padding-top:0;margin-top:4px;}
+  h2 .num{color:var(--orange);font-variant-numeric:tabular-nums;}
+  h3{font-size:1.05rem;margin:18px 0 6px;font-weight:700;color:var(--ink);}
+  p{margin:10px 0;color:var(--ink-soft);}
+  a{color:var(--orange-dark);}
+  ul,ol{color:var(--ink-soft);}
+  li{margin:7px 0;}
+  strong{color:var(--ink);}
+  code{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;color:var(--ink);}
+  .lead{font-size:1.02rem;}
+  .steps{counter-reset:step;list-style:none;padding:0;margin:14px 0;}
+  .steps li{position:relative;padding:14px 16px 14px 54px;border:1px solid var(--line);border-radius:var(--radius-sm);margin:10px 0;background:#fff;}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:14px;width:26px;height:26px;background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;}
+  .method{border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:18px 20px;margin:16px 0;background:#fff;}
+  .method h3{margin-top:0;color:var(--orange-dark);}
+  .badge{display:inline-block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--orange-dark);background:var(--orange-tint);border:1px solid var(--line-strong);border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle;}
+  .note{background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:14px 18px;margin:16px 0;font-size:.94rem;}
+  .note.warn{border-left:4px solid var(--orange);background:var(--orange-tint);}
+  .note .label{display:block;font-weight:800;color:var(--orange-dark);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+  .table-scroll{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:var(--radius-sm);}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:480px;}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:var(--bg-soft);font-weight:700;color:var(--ink);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;}
+  tr:last-child td{border-bottom:none;}
+  .contact-card{border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:16px 18px;background:#fff;margin:16px 0;}
+  .contact-card .row{margin:4px 0;font-size:.95rem;}
+  .contact-card .row span{display:inline-block;min-width:130px;color:var(--muted);font-weight:600;}
+  footer.foot{text-align:center;color:var(--muted);font-size:.85rem;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);}
+  @media (max-width:680px){
+    h1{font-size:1.6rem;}.main-pad{padding:22px 18px;}
+    .contact-card .row span{min-width:0;display:block;margin-bottom:1px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="brand"><span class="dot">B</span> Biteaze</span>
+    <h1>Delete your account &amp; data</h1>
+    <p class="sub">For the <strong>Biteaze Billing</strong> Android app · Biteaze Solutions LLP</p>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+<div class="main-pad">
+
+  <p class="lead">This page explains how to permanently delete your <strong>Biteaze Billing</strong> account and the data associated with it. You can request deletion in three ways — in the app, here on the web, or by email. You do <strong>not</strong> need to install or sign in to the app to request deletion via the web or email.</p>
+  <p>App: <strong>Biteaze Billing</strong> (Android) · <code>com.aistudio.voicebillingpos.jyxqwt</code><br>Published by Biteaze Solutions LLP. See also our <a href="https://biteaze.com/privacy">Privacy Policy</a>.</p>
+
+  <!-- 1 -->
+  <h2 id="inapp"><span class="num">1.</span> Delete in the app <span class="badge">Fastest · immediate</span></h2>
+  <p>The quickest way to delete everything is from inside the app:</p>
+  <ol class="steps">
+    <li>Open Biteaze Billing and go to <strong>More → Profile</strong>.</li>
+    <li>Tap <strong>Delete Account</strong>.</li>
+    <li>When prompted, type <code>DELETE</code> to confirm.</li>
+    <li>Confirm. The app calls our secure <code>deleteAccount</code> function, which permanently erases your account and cloud data.</li>
+  </ol>
+  <p>This is <strong>immediate and irreversible</strong>. Signing out or switching accounts also wipes the local database from that device.</p>
+
+  <!-- 2 -->
+  <h2 id="web"><span class="num">2.</span> Request deletion on the web <span class="badge">No login needed</span></h2>
+  <p>If you cannot access the app, submit a request on this page. Provide the <strong>email address registered to your Biteaze Billing account</strong> so we can locate and verify it. We will verify your identity (for example, by confirming control of that email address) and then erase your account and cloud data.</p>
+  <div class="note">
+    <span class="label">What to include</span>
+    The email (and, if you used phone sign-in, the phone number) registered to your account, and a short note that you want your account and data deleted. Once verified, web-submitted deletions are processed immediately and irreversibly.
+  </div>
+  <p style="font-size:.9rem;color:var(--muted);">If this page does not show a request form, email us using the details in Section 3 below — that is an equally valid deletion channel.</p>
+
+  <!-- 3 -->
+  <h2 id="email"><span class="num">3.</span> Request deletion by email</h2>
+  <p>Email us from the address registered to your account:</p>
+  <div class="contact-card">
+    <div class="row"><span>Email</span> <a href="mailto:support@biteaze.com?subject=Account%20deletion%20request">support@biteaze.com</a></div>
+    <div class="row"><span>Subject</span> Account deletion request</div>
+    <div class="row"><span>Entity</span> Biteaze Solutions LLP</div>
+    <div class="row"><span>Registered office</span> Ground Floor, Shop No-6, 8/2295, Satkar Building, Dhundhiyawadi, Palanpur, District Banaskantha, Gujarat 385001, India</div>
+  </div>
+  <p>After we verify your identity, we complete the deletion promptly and, in any event, <strong>within 30 days</strong> of a verified request.</p>
+
+  <!-- 4 -->
+  <h2 id="what"><span class="num">4.</span> What gets deleted</h2>
+  <p>When your deletion request is completed, we erase:</p>
+  <ul>
+    <li>Your <strong>Firebase Authentication account</strong> (your sign-in identity).</li>
+    <li>All of your <strong>cloud data</strong> at <code>users/{your-account-id}/…</code> and its subcollections — products, orders and line items, expenses, customers, staff, add-ons, variations, and inventory ledger.</li>
+    <li>Your <strong>subscription/entitlement document</strong>.</li>
+  </ul>
+  <p>Your <strong>on-device data</strong> is removed when you delete in-app, or when you sign out / switch accounts on a device. If you uninstall the app, the local database is removed with it.</p>
+
+  <!-- 5 -->
+  <h2 id="retained"><span class="num">5.</span> What is retained after deletion (and why)</h2>
+  <div class="note warn">
+    <span class="label">A small amount of data is kept, by design</span>
+    <div class="table-scroll" style="margin-top:8px;">
+    <table>
+      <thead><tr><th>What</th><th>Why</th><th>How long</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Anti-abuse identity hash</strong> (in our <code>trial_history</code> ledger)</td>
+          <td>A one-way, non-reversible hash we keep to stop people repeatedly farming our free trial. We cannot reverse it to recover your identity and we do not use it to contact you or build a profile.</td>
+          <td>Retained even after account deletion, to protect the integrity of our trial system.</td>
+        </tr>
+        <tr>
+          <td><strong>Records required by law</strong> (e.g. certain tax/financial records)</td>
+          <td>We are legally required to retain some records.</td>
+          <td>Only for as long as the applicable law requires.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    Apart from these, deletion erases your personal data from our systems. See Section 14 of the <a href="https://biteaze.com/privacy#s14">Privacy Policy</a> for full detail.
+  </div>
+
+  <!-- 6 -->
+  <h2 id="timeline"><span class="num">6.</span> Timeline &amp; confirmation</h2>
+  <ul>
+    <li><strong>In-app and web deletions</strong> — processed immediately and irreversibly once confirmed/verified.</li>
+    <li><strong>Email deletions</strong> — completed within <strong>30 days</strong> of a verified request.</li>
+    <li><strong>Confirmation</strong> — we send a confirmation to your registered email address once deletion is complete.</li>
+    <li><strong>Irreversible</strong> — account deletion is permanent. There is no undo and no grace period for the account itself. (This is separate from the 90-day read-only grace that applies to an expired subscription — see the Privacy Policy.)</li>
+  </ul>
+
+  <h2 id="help"><span class="num">7.</span> Need help?</h2>
+  <p>If you have any question about deleting your account or data, contact our Grievance Officer at <a href="mailto:support@biteaze.com">support@biteaze.com</a>. We aim to respond within one month (30 days).</p>
+
+  <footer class="foot">
+    © <span id="cpy-year">2026</span> Biteaze Solutions LLP. All rights reserved. &nbsp;·&nbsp; Biteaze Billing account &amp; data deletion.
+  </footer>
+
+</div>
+</main>
+</div>
+
+<script>document.getElementById('cpy-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
