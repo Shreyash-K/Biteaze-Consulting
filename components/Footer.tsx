@@ -38,6 +38,8 @@ export const Footer: React.FC = () => {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  // Honeypot — bots fill hidden fields; real users never see or fill this.
+  const [hp, setHp] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -50,6 +52,13 @@ export const Footer: React.FC = () => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
+
+    // Honeypot tripped → silently drop (never write to the DB), feign success.
+    if (hp) {
+      setStatus('success');
+      setTimeout(() => setStatus('idle'), 5000);
+      return;
+    }
 
     try {
       // Send data to Supabase 'leads' table
@@ -74,23 +83,11 @@ export const Footer: React.FC = () => {
       setTimeout(() => setStatus('idle'), 5000);
 
     } catch (error: any) {
+      // Log full detail for debugging, but never surface raw error objects to
+      // the visitor (they can leak internal/database details).
       console.error('Error submitting form:', error);
       setStatus('error');
-      
-      // Extract error message safely to handle objects or strings
-      let message = 'Something went wrong. Please try again.';
-      
-      if (typeof error === 'string') {
-        message = error;
-      } else if (error?.message) {
-        message = typeof error.message === 'string' ? error.message : JSON.stringify(error.message);
-      } else if (error?.error_description) {
-        message = error.error_description;
-      } else {
-        message = JSON.stringify(error);
-      }
-      
-      setErrorMessage(message);
+      setErrorMessage('Something went wrong. Please try again, or email support@biteaze.com.');
     }
   };
 
@@ -117,6 +114,17 @@ export const Footer: React.FC = () => {
           {/* Right: Form */}
           <div className="lg:w-1/2 bg-zinc-950 p-8 border-4 border-zinc-900 shadow-[10px_10px_0px_0px_rgba(24,24,27,1)]">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot — off-screen, hidden from humans & assistive tech; must stay empty */}
+              <input
+                type="text"
+                name="company_website"
+                value={hp}
+                onChange={(e) => setHp(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute left-[-9999px] top-[-9999px] h-0 w-0 opacity-0"
+              />
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <label className="block text-zinc-500 font-mono text-xs uppercase mb-2">Name</label>
@@ -145,11 +153,12 @@ export const Footer: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-zinc-500 font-mono text-xs uppercase mb-2">Email</label>
-                  <input 
+                  <input
+                    required
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    type="email" 
+                    type="email"
                     className="w-full bg-zinc-900 border-b-2 border-zinc-800 focus:border-orange-500 text-white p-2 outline-none transition-colors" 
                   />
                 </div>

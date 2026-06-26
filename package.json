@@ -6,15 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "guard": "node scripts/privacy-guard.mjs",
+    "budget": "node scripts/size-budget.mjs",
+    "verify": "npm run build && npm run guard && npm run budget"
   },
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-router-dom": "6.22.3",
-    "@remix-run/router": "1.15.3",
+    "react-router-dom": "^6.30.4",
     "lucide-react": "^0.562.0",
-    "recharts": "^3.6.0",
     "@supabase/supabase-js": "2"
   },
   "devDependencies": {
