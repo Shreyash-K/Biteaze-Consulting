@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChefHat } from 'lucide-react';
-import { LOGO_URL } from '../utils/firebaseClient';
+import { Menu, X } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,25 +33,14 @@ export const Navbar: React.FC = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            {/* Logo Container - Square format, white background, NO BORDER */}
-            <div className="bg-white group-hover:rotate-12 transition-transform w-10 h-10 flex items-center justify-center overflow-hidden">
-              {/* Logo from Firebase Storage (website/logo.png). The previous Supabase logo + the local fallback
-                  were both broken (the repo logo.png is UTF-8-corrupted, the Supabase object is absent), so on any
-                  load error we hide the image and let the BITEAZE wordmark carry the brand until a clean logo is
-                  uploaded to Storage. */}
-              <img
-                src={LOGO_URL}
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                alt="BITEAZE Logo"
-                className="w-full h-full object-cover scale-125"
-              />
-            </div>
-            
-            {/* Brand Name - All Orange #ea580c (orange-600), using Archivo Black explicitly */}
-            <span className="font-['Archivo_Black'] text-2xl tracking-tighter text-orange-600">
-              BITEAZE
-            </span>
+          <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            {/* Biteaze logo lockup (icon + wordmark) — bundled static SVG (white + orange, transparent, built for
+                the dark header). Replaces the old white-square Storage logo and the BITEAZE text wordmark. */}
+            <img
+              src="/biteaze-logo.svg"
+              alt="Biteaze"
+              className="h-11 w-auto select-none"
+            />
           </div>
           
           <div className="hidden md:block">
