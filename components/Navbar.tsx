@@ -37,9 +37,9 @@ export const Navbar: React.FC = () => {
             {/* Biteaze logo lockup (icon + wordmark) — bundled static SVG (white + orange, transparent, built for
                 the dark header). Replaces the old white-square Storage logo and the BITEAZE text wordmark. */}
             <img
-              src="/biteaze-logo.svg"
-              alt="Biteaze"
-              className="h-11 w-auto select-none"
+              src="/biteaze-logo.png"
+              alt="Biteaze — we'll handle it"
+              className="h-12 w-auto select-none"
             />
           </div>
           
