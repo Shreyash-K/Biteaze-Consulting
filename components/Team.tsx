@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { Crosshair, Terminal, Zap } from 'lucide-react';
-import { supabase } from '../utils/supabaseClient';
+import { fetchPublicCollection } from '../utils/firebaseClient';
 
 interface Operator {
   id: string;
@@ -78,25 +78,17 @@ export const Team: React.FC = () => {
   useEffect(() => {
     const fetchTeam = async () => {
       try {
-        const { data, error } = await supabase
-          .from('team')
-          .select('*')
-          .order('id', { ascending: true });
-
-        if (error) {
-          console.error('Error fetching team data from Supabase:', error);
-          return;
-        }
-
-        if (data && data.length > 0) {
+        const rows = await fetchPublicCollection<Operator>('websiteTeam', 'order');
+        if (rows.length > 0) {
           const cacheBuster = Date.now();
-          const updatedMembers = data.map((member: any) => ({
-            ...member,
-            image: member.image.includes('?') 
-              ? `${member.image}&v=${cacheBuster}` 
-              : `${member.image}?v=${cacheBuster}`
+          const members: Operator[] = rows.map((m) => ({
+            ...m,
+            // Only cache-bust a real image URL — a doc missing `image` must stay falsy, not become "undefined?v=…".
+            image: m.image
+              ? (m.image.includes('?') ? `${m.image}&v=${cacheBuster}` : `${m.image}?v=${cacheBuster}`)
+              : m.image,
           }));
-          setTeamMembers(updatedMembers);
+          setTeamMembers(members);
         }
       } catch (err) {
         console.error('Unexpected error in fetchTeam:', err);
@@ -205,9 +197,10 @@ export const Team: React.FC = () => {
 
                         {/* Image Container */}
                         <div className="relative aspect-[4/3] overflow-hidden bg-zinc-800 z-10">
-                            <img 
-                                src={member.image} 
-                                alt={member.name} 
+                            <img
+                                src={member.image}
+                                alt={member.name}
+                                onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }}
                                 className={`w-full h-full object-cover contrast-125 transition-all duration-700 ${isActive ? 'grayscale-0 scale-110' : 'grayscale brightness-75'}`}
                             />
                             

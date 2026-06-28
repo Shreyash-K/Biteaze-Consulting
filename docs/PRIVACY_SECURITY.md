@@ -2,7 +2,9 @@
 
 This is the source-of-truth guide for keeping the **biteaze.com marketing website** privacy-compliant, secure, and fast. It pairs with the published policy at `public/website-privacy/index.html` and the invariants in `CLAUDE.md`. Keep this doc and the policy in lockstep with the code.
 
-> Scope: the website + its Supabase backend only. The Android app has its own policy at `/privacy` and is out of scope here.
+> Scope: the website + its backend only. The Android app has its own policy at `/privacy` and is out of scope here.
+
+> **⚠️ Backend migration (Jun 2026): Supabase → Firebase.** The backend has been rebuilt onto **Google Firebase** (project `androidbilling-f801b`, display name "Biteaze"): the contact form now posts to the `submitWebsiteLead` **Cloud Function** (the browser never writes the DB), which writes `websiteLeads` in **Cloud Firestore**; team/portfolio are public-read Firestore collections (`websiteTeam`/`websitePortfolio`); the logo + images live in **Firebase Storage** `/website`. The published policy (v1.1) reflects this. **The Supabase sections below remain valid as the interim/teardown guidance** — the P0 RLS fix is still needed until the Supabase project is locked/deleted (its 7 exposed `leads` rows persist there until then). Once the migration is live (rules + function deployed, data migrated, website cut over), **lock/delete Supabase** and these Supabase sections become history.
 
 ---
 
@@ -17,17 +19,27 @@ This is the source-of-truth guide for keeping the **biteaze.com marketing websit
 
 ## 2. Data map (what PII exists, where)
 
-| Data | Where collected | Where stored | Lawful basis | Retention |
+| Data | Where collected | Where stored (post-migration) | Lawful basis | Retention |
 |---|---|---|---|---|
-| Name, Brand, Email, Phone (+91), Service Interest | Contact form (`components/Footer.tsx`) | Supabase `leads` table | DPDP s.7(a) voluntary provision (enquiry) | Until enquiry served + relationship; **choose a window** (see §6) |
-| IP + User-Agent | Inherent to any request / asset load | Hosting + 3rd-party logs (Vercel/Cloudflare, Google Fonts, Tailwind CDN, Supabase, image hosts) | Inherent to delivery | Provider log policies |
-| Team / Portfolio content | `team` / `portfolio` tables | Supabase | Our own content (not visitor PII) | n/a |
+| Name, Brand, Email, Phone (+91), Service Interest | Contact form (`components/Footer.tsx`) → `submitWebsiteLead` Cloud Function | Firestore `websiteLeads` (CF-only write; browser can't read) | DPDP s.7(a) voluntary provision (enquiry) | Until enquiry served + relationship; **choose a window** (see §6) |
+| IP + User-Agent | Inherent to any request / asset load | Hosting + 3rd-party logs (Vercel/Cloudflare, Google Fonts, Tailwind CDN, Firebase: Firestore/Functions/Storage, image hosts) | Inherent to delivery | Provider log policies |
+| Team / Portfolio content | `websiteTeam` / `websitePortfolio` (Firestore, public-read) + images in Firebase Storage `/website` | Firebase | Our own content (not visitor PII) | n/a |
 
 The ROI calculator is **client-side only** — nothing is sent or stored. No cookies, no `localStorage`/`sessionStorage`, no analytics, no tracking.
 
 ---
 
-## 3. Supabase access model (RLS)
+## 3. Backend access model
+
+### 3.1 Firebase (live, post-migration)
+
+The Firebase Web `apiKey` is a **public identifier**, not a secret — safety depends entirely on **Security Rules + the Cloud Function**. This mirrors and hardens the old Supabase "anon can't read PII" posture:
+- **`websiteLeads` = Cloud-Function-only.** `firestore.rules` denies ALL client read/write; the `submitWebsiteLead` Cloud Function (Admin SDK, App-Check-flip-ready, honeypot + strict validation) is the sole writer. The browser never reads or writes lead PII — stricter than the old anon-INSERT-only Supabase policy.
+- **`websiteTeam` / `websitePortfolio` = public read, no client write** (display content, no PII). Read by the site over the Firestore REST API (no Firestore SDK — keeps the bundle small).
+- **Storage `/website` = public read, no client write** (logo + images; Admin-SDK / console / migration-script uploads only).
+- Rules + function live in `android-billing-admin-web` (`firestore.rules`, `storage.rules`, `functions/src/website.ts`), emulator-tested (`tests/website-rules.test.ts`, `functions/test/website-lead.test.ts`). New collections get rules with minimal access **before** any client touches them.
+
+### 3.2 Supabase (interim — until teardown)
 
 **The anon key is public by design** (it ships in the browser bundle). Safety depends entirely on Row-Level Security. Rules:
 
@@ -60,16 +72,18 @@ select * from public.leads limit 1;
 
 **CSP — not yet applied** because it requires removing the runtime Tailwind CDN first. Target policy:
 
+**Function-first (no App Check yet):**
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://rhxxzvhemrzxvndolajg.supabase.co; connect-src 'self' https://rhxxzvhemrzxvndolajg.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://firebasestorage.googleapis.com https://images.unsplash.com; connect-src 'self' https://firestore.googleapis.com https://us-central1-androidbilling-f801b.cloudfunctions.net; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
 ```
 
 Blockers / notes, in order:
-1. **Remove `cdn.tailwindcss.com`** (move Tailwind to a PostCSS build step) — otherwise `script-src` needs that origin **and** `'unsafe-eval'` for the in-browser JIT, which defeats the CSP. This is also the **biggest single performance win**.
-2. `'unsafe-inline'` stays in `style-src` only because of the current inline `<style>` + React inline styles; move CSS into the build to drop it later.
-3. If **Unsplash** images stay, add `https://images.unsplash.com` to `img-src` (and they're already disclosed in the policy). Preferred: migrate those images to Supabase so `img-src` stays tight.
-4. If a **Turnstile/hCaptcha** widget is added, add `https://challenges.cloudflare.com` to `script-src` + `frame-src`.
-5. Self-hosting Google Fonts at build time lets you drop `fonts.googleapis.com`/`fonts.gstatic.com` entirely (removes a third-party IP disclosure).
+1. **Tailwind CDN already removed** — it's now a PostCSS build step (the prior biggest blocker + perf win is done), so `script-src` needs neither `cdn.tailwindcss.com` nor `'unsafe-eval'`.
+2. **Firebase origins** (replaced the Supabase origin): `connect-src` needs `firestore.googleapis.com` (public team/portfolio reads via REST) + the callable Function host `us-central1-androidbilling-f801b.cloudfunctions.net` (contact form). `img-src` needs `firebasestorage.googleapis.com` (logo + migrated images).
+3. **When App Check (reCAPTCHA v3) is flipped on**, ADD: `script-src https://www.google.com https://www.gstatic.com`; `connect-src https://firebaseappcheck.googleapis.com`; `frame-src https://www.google.com` (the reCAPTCHA challenge iframe). reCAPTCHA also sets its own google.com cookies — disclose in the policy at that point.
+4. `'unsafe-inline'` stays in `style-src` only because of the current inline `<style>` + React inline styles; move CSS into the build to drop it later.
+5. **Unsplash** stays in `img-src` only as the team-fallback host (the live images are now on Firebase Storage). Replacing the hardcoded Unsplash fallbacks in `Team.tsx` would let you drop it.
+6. Self-hosting Google Fonts at build time lets you drop `fonts.googleapis.com`/`fonts.gstatic.com` entirely (removes a third-party IP disclosure).
 
 Deliver CSP as a **header** (not a `<meta>`), so `frame-ancestors` works.
 

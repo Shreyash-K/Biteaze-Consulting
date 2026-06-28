@@ -1,10 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChefHat } from 'lucide-react';
-
-// Construct the public URL for the logo in the 'biteaze-assets' bucket
-const SUPABASE_PROJECT_URL = 'https://rhxxzvhemrzxvndolajg.supabase.co';
-const REMOTE_LOGO_URL = `${SUPABASE_PROJECT_URL}/storage/v1/object/public/biteaze-assets/logo.png`;
+import { LOGO_URL } from '../utils/firebaseClient';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,11 +37,15 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             {/* Logo Container - Square format, white background, NO BORDER */}
             <div className="bg-white group-hover:rotate-12 transition-transform w-10 h-10 flex items-center justify-center overflow-hidden">
-              <img 
-                src={REMOTE_LOGO_URL}
-                onError={(e) => { e.currentTarget.src = '/logo.png'; }}
-                alt="BITEAZE Logo" 
-                className="w-full h-full object-cover scale-125" 
+              {/* Logo from Firebase Storage (website/logo.png). The previous Supabase logo + the local fallback
+                  were both broken (the repo logo.png is UTF-8-corrupted, the Supabase object is absent), so on any
+                  load error we hide the image and let the BITEAZE wordmark carry the brand until a clean logo is
+                  uploaded to Storage. */}
+              <img
+                src={LOGO_URL}
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                alt="BITEAZE Logo"
+                className="w-full h-full object-cover scale-125"
               />
             </div>
             

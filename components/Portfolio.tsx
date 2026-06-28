@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { PortfolioItem } from '../types';
-import { supabase, isSupabaseConfigured } from '../utils/supabaseClient';
+import { fetchPublicCollection } from '../utils/firebaseClient';
 
 const COLORS = [
   'bg-red-900/40', 'bg-orange-900/40', 'bg-amber-900/40', 'bg-yellow-900/40',
@@ -20,31 +20,18 @@ export const Portfolio: React.FC = () => {
   useEffect(() => {
     const fetchPortfolio = async () => {
       setIsLoading(true);
-      if (!isSupabaseConfigured) {
-        setIsLoading(false);
-        return;
-      }
-
-      const { data, error } = await supabase
-        .from('portfolio')
-        .select('*')
-        .order('created_at', { ascending: true });
-
-      if (error) {
-        console.error('Portfolio Fetch Error:', error.message);
-        setIsLoading(false);
-        return;
-      }
-
-      if (data) {
-        const mappedItems: PortfolioItem[] = data.map((item: any, index: number) => ({
+      try {
+        const rows = await fetchPublicCollection<any>('websitePortfolio', 'order');
+        const mappedItems: PortfolioItem[] = rows.map((item, index) => ({
           id: item.id,
           name: item.name,
           image: item.image,
-          category: item.category || '', 
-          color: COLORS[index % COLORS.length]
+          category: item.category || '',
+          color: COLORS[index % COLORS.length],
         }));
         setItems(mappedItems);
+      } catch (err) {
+        console.error('Portfolio Fetch Error:', err);
       }
       setIsLoading(false);
     };

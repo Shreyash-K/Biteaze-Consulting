@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
-import { supabase } from '../utils/supabaseClient';
+import { httpsCallable } from 'firebase/functions';
+import { functions } from '../utils/firebaseClient';
 
 export const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,20 +62,20 @@ export const Footer: React.FC = () => {
     }
 
     try {
-      // Send data to Supabase 'leads' table
-      const { error } = await supabase
-        .from('leads')
-        .insert([
-          { 
-            name: formData.name,
-            email: formData.email,
-            brand_name: formData.brandName,
-            service_interest: formData.serviceInterest,
-            phone: `+91 ${formData.phone}`
-          }
-        ]);
-
-      if (error) throw error;
+      // Submit via the submitWebsiteLead Cloud Function (Admin SDK writes the PII server-side; the browser never
+      // writes the leads collection directly). The honeypot is also forwarded so a caller that skips this client
+      // short-circuit is still dropped server-side.
+      const submitLead = httpsCallable(functions, 'submitWebsiteLead');
+      await submitLead({
+        name: formData.name,
+        email: formData.email,
+        brandName: formData.brandName,
+        // Only attach the +91 prefix when a number was actually typed, so a blank phone reaches the function as
+        // "" and is stored as null (the field is optional) — not the junk string "+91".
+        phone: formData.phone.trim() ? `+91 ${formData.phone.trim()}` : '',
+        serviceInterest: formData.serviceInterest,
+        company_website: hp,
+      });
 
       setStatus('success');
       setFormData({ name: '', brandName: '', email: '', phone: '', serviceInterest: 'Full Brand Development' });
